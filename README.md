@@ -22,7 +22,7 @@ Bash is a command-line interpreter or shell for Unix-like operating systems. It 
 ## 🏄🏼‍♀️ FreeSurfer - analyzing structural MRI
 As we have learned some basics about MRI and bash now, we can approach the funny part of the story: analyzing data! Various software is available for analyzing structural MRI (e.g., T1-weighted images). [FreeSurfer](https://freesurfer.net/) has the advantage over other software that it not only includes the individual voxels (= "cubes" that make up an MRI image; pixels in 3D space) in the analysis, but also reconstructs the brain surface. This makes the analysis more accurate. 
 By pre-processing a T1-weighted MR image, we want to edit the image (e.g., intensity corrections) and remove inaccuracies - quite similar to Photoshop. Our goal in the end is to extract brain measures such as brain volume or the thickness of the cortex. These measures can then be compared between a group of patients and healthy controls, for example.
-- Best practices for analyzing structural MRI in the context of neurodevelopmental disorders are well outlined by (Lea Backhausen)[https://doi.org/10.1007%2Fs11065-021-09496-2]
+- Best practices for analyzing structural MRI in the context of neurodevelopmental disorders are well outlined by [Lea Backhausen](https://doi.org/10.1007%2Fs11065-021-09496-2)
 - A very nice [tutorial](https://www.youtube.com/watch?v=6wxJ1up-E7E&list=PLIQIswOrUH6_DWy5mJlSfj6AWY0y9iUce&ab_channel=AndrewJahn) how to use FreeSurfer to process T1w images, again by Andrew Jahn
 - How to navigate Freeview, a tool to visualize FreeSurfer output, is explained in [this tutorial](https://youtu.be/Mv-ECowxq2o)
 

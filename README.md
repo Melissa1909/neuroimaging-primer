@@ -1,6 +1,6 @@
 # neuroimaging-primer 🧠📚
 
-Some important sources to get into the basics of neuroimaging research. The list is definitely incomplete and follows my personal preferences and experiences what I consider important. Feel free to contribute and open a pull request! 
+Some important sources to get into the basics of neuroimaging research. The list is definitely incomplete and follows my personal preferences and experiences. Feel free to contribute and open a pull request! 
 
 ## 📸 MRI - imaging the brain 
 Studying the brain has undergone different periods, tightly linked to the available tools to look at and study it. Magnetic resonance imaging (MRI) is a common tool to image brain structure and function. It is a non-invasive medical imaging technique that uses a strong magnetic field and radio waves to generate a detailed representation of the brain. Get some more information of how MRI works below:

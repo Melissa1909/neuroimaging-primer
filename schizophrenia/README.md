@@ -1,0 +1,7 @@
+# schizophrenia 🧠
+
+
+
+
+
+

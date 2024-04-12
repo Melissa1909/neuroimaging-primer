@@ -15,7 +15,7 @@ Bash is a command-line interpreter or shell for Unix-like operating systems. It 
 - [Unix cheat sheet](https://www.guru99.com/linux-commands-cheat-sheet.html#1): a good overview of the most important commands to work with Unix
 - If you are working on a Linux or macOS computer, open a terminal and just play around a bit (e.g., copy a file, rename it, navigate through some directories, create a new directory…). Check out the bash tutorials and cheat sheet again if you need it. 
 - ALWAYS be careful with the remove (rm) command - if you delete files with rm, they will not be stored inside your trash bin but will be deleted immediately!
-- Type *name-of-function –help* in the terminal to get more information about a specific function.
+- Type *name-of-function --help* in the terminal to get more information about a specific function.
 
 
 ## 📐 BIDS - keeping things organized

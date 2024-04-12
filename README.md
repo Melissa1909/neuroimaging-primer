@@ -15,6 +15,7 @@ Bash is a command-line interpreter or shell for Unix-like operating systems. It 
 - [Unix cheat sheet](https://www.guru99.com/linux-commands-cheat-sheet.html#1): a good overview of the most important commands to work with Unix
 - If you are working on a Linux or macOS computer, open a terminal and just play around a bit (e.g., copy a file, rename it, navigate through some directories, create a new directory…). Check out the bash tutorials and cheat sheet again if you need it. 
 - ALWAYS be careful with the remove (rm) command - if you delete files with rm, they will not be stored inside your trash bin but will be deleted immediately!
+- Type *name-of-function –help* in the terminal to get more information about a specific function.
 
 
 ## 📐 BIDS - keeping things organized
@@ -32,6 +33,16 @@ By pre-processing a T1-weighted MR image, we want to edit the image (e.g., inten
 As Freesurfer’s reconstruction is good but not perfect, we want to check some of the outputs visually. As looking at all images is tedious, FS has developed some handy tools that create a screenshot of the most important segmentations.
 - [QAtools](https://surfer.nmr.mgh.harvard.edu/fswiki/QATools)
 - Find some helpful guidelines to assess image quality provided by ENIGMA [here](https://enigma.ini.usc.edu/protocols/imaging-protocols/). 
+
+
+## 🔧 FSL - fslutils
+[FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/) is another really handy software to work with MRI data of different modalities. There is also a pipeline to process T1w images called *fsl_anat*. It is quicker compared to FreeSurfer's *recon_all* (takes ~1h) but not as precise in calculating surface-related measures as cortical thickness (because no surfaces are specifically reconstructed like in FreeSurfer). It also has a processing tool for functional MRI called fsl *FEAT*. 
+
+What is really helpful: FSL has some basic commands called fslutils that can be used to for example do basic maths on images (e.g., threshold an image: only voxels with values above a certain threshold are kept, the other ones will be set 0; or to calculate a mean image of a time series in fMRI), calculate statistics of images, output the header information and so on. This can be helpful in many cases and having the fslutils reference in mind can be a good starting point to work with MR images. 
+- Check out the documentation [here](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Fslutils) 
+- You can again type *name-of-function --help* in the terminal to get more information about it. 
+
+
 
 
 

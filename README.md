@@ -43,6 +43,13 @@ What is really helpful: FSL has some basic commands called fslutils that can be 
 - You can again type *name-of-function --help* in the terminal to get more information about it. 
 
 
+## ⚖️ Multi-site studies - NeuroCombat for scanner harmonization
+Big data is becoming more and more important for neuroimaging research. Since a single site typically cannot acquire more than a (few) hundred MRI scans, data sharing and collaborative efforts such as the [ENIGMA consortium](https://enigma.ini.usc.edu/) are becoming increasingly popular. However, this requires to correct for the effect of different scanner hardware and scanning protocols, which introduces bias in the data.  
+There are several algorithms and approaches at hand, and the problem is not yet entirely solved. [NeuroCombat](https://doi.org/10.1016/j.neuroimage.2017.11.024) provides a great framework to relatively easily correct for the scanner effect while retaining biological variance.
+- The python-based software is provided on [Github](https://github.com/Jfortin1/neuroCombat). 
+
+
+
 
 
 

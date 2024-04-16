@@ -35,12 +35,26 @@ As Freesurfer’s reconstruction is good but not perfect, we want to check some 
 - Find some helpful guidelines to assess image quality provided by ENIGMA [here](https://enigma.ini.usc.edu/protocols/imaging-protocols/). 
 
 
-## 🔧 FSL - fslutils
+## 🔧 FSL - fslutils and registration tools
 [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/) is another really handy software to work with MRI data of different modalities. There is also a pipeline to process T1w images called *fsl_anat*. It is quicker compared to FreeSurfer's *recon_all* (takes ~1h) but not as precise in calculating surface-related measures as cortical thickness (because no surfaces are specifically reconstructed like in FreeSurfer). It also has a processing tool for functional MRI called fsl *FEAT*. 
 
 What is really helpful: FSL has some basic commands called fslutils that can be used to for example do basic maths on images (e.g., threshold an image: only voxels with values above a certain threshold are kept, the other ones will be set 0; or to calculate a mean image of a time series in fMRI), calculate statistics of images, output the header information and so on. This can be helpful in many cases and having the fslutils reference in mind can be a good starting point to work with MR images. 
 - Check out the documentation [here](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/Fslutils) 
 - You can again type *name-of-function --help* in the terminal to get more information about it. 
+
+
+Furthermore, FSL has some handy tools for image registration, i.e., aligning one image to a reference, called [flirt](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FLIRT) and [fnirt](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/FNIRT/). Registering images is needed a lot in neuroimaging. A special case of image registration is "normalization", where the reference image is the so-called MNI space, a standardized 3D coordinate system used to compare and analyze brain data across different individuals and studies. It was created by averaging several subject's brain data, making it an average representation of the human brain anatomy. (But take care: different software uses different MNI templates / versions of the MNI space and they are often not compatible! If you are interested to read on that further, check out [this](https://doi.org/10.1038/s41592-022-01625-w) paper). Apart from normalization, any two images can be registered. 
+- FLIRT: uses linear operations to register an input image -in to a reference -ref, typically used for registration of two images of the *same* subject (e.g., fMRI and T1w)
+- FNIRT: uses non-linear operations, typically used for registration of two images of *different* subjects
+- Work through this [FSL practical](https://fsl.fmrib.ox.ac.uk/fslcourse/graduate/lectures/practicals/registration/) to get to know the operations
+- FSL Course [video](https://www.youtube.com/watch?v=2zcfYgdxhKM&ab_channel=FSLCourse) on image registration and different spaces
+- How to use flirt for [resampling](https://andysbrainbook.readthedocs.io/en/latest/FrequentlyAskedQuestions/FrequentlyAskedQuestions.html#resampling) an image (i.e., changing the resolution, dimensions, or both of an image)
+
+
+To get some basic information about the MR image, you can use *fslinfo* to see the [header](https://andysbrainbook.readthedocs.io/en/latest/FrequentlyAskedQuestions/FrequentlyAskedQuestions.html#what-is-in-the-header-of-a-nifti-file) of a nifti file. This contains information about the image dimension and resolution.
+
+If you want to get more advanced in neuroimaging, I advise you to go through the FSL Course material, either online or in person (a live course is offered every year). FSL offers tools for a lot of MRI modalities. Working through this course will help you working with MR images but also understanding deeper what preprocessing pipelines do and what it is all about. 
+- [Course material](https://open.win.ox.ac.uk/pages/fslcourse/website/online_materials.html)
 
 
 ## ⚖️ Multi-site studies - NeuroCombat for scanner harmonization
@@ -49,7 +63,9 @@ There are several algorithms and approaches at hand, and the problem is not yet 
 - The python-based software is provided on [Github](https://github.com/Jfortin1/neuroCombat). 
 
 
-
-
-
-
+## 🧐 Statistical analysis
+Now that we have preprocessed the images, we want to extract actually meaningful information and do some analyses. A common research question in neuroimaging is whether a case and a control group differ in a certain brain measure. Thereby, the brain measure can be analyzed voxel-/vertexwise or in a certain parcellation (defined by an atlas), such as the Desikan-Killiany parcellation, the default parcellation in FreeSurfer. A parcellation is nothing else than looking at your brain measure with less spatial resolution. Instead of thousands of voxels or vertices, you summarize the brain measure into a few (hundred) regions of interest. As an advantage, the analysis is simpler and the number of statistical tests will be less. On the other hand, summarizing regions might lead to underestimating the results or even missing significantly different regions.
+There are plenty of good resources for statistical analyses and you will definitely have to find some for your specific need. I will list a few general sources, which helped me a lot to understand general concepts and ideas, targeted to neuroimaging:
+- Jeanette Mumford's ["mumfordbrainstats" tutorials](https://www.youtube.com/@mumfordbrainstats)
+- Russel Poldrack's ["Statistical Thinking for the 21st Century"](https://statsthinking21.github.io/statsthinking21-core-site/)
+- the ["Statistics 101" channel](https://www.youtube.com/watch?v=0Vj2V2qRU10&list=PLIeGtxpvyG-KA-BLkL391X__r0kU4_hm5&ab_channel=BrandonFoltz), especially the playlists on ANOVA, linear regression, and how the two collapse into the general linear model (GLM)

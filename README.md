@@ -1,6 +1,6 @@
 # neuroimaging-primer 🧠📚
 
-Some important sources to get into the basics of neuroimaging research. The list is definitely incomplete and follows my personal preferences and experiences. Feel free to contribute and open a pull request! 
+Some important sources to get into the basics of neuroimaging research. The list is incomplete and follows my personal preferences and experiences. Feel free to contribute and open a pull request! 
 
 ## 📸 MRI - imaging the brain 
 Studying the brain has undergone different periods, tightly linked to the available tools to look at and study it. Magnetic resonance imaging (MRI) is a common tool to image brain structure and function. It is a non-invasive medical imaging technique that uses a strong magnetic field and radio waves to generate a detailed representation of the brain. Get some more information of how MRI works below:
@@ -14,18 +14,20 @@ Bash is a command-line interpreter or shell for Unix-like operating systems. It 
 - [Unix intro by FSL](https://open.win.ox.ac.uk/pages/fslcourse/website/online_materials.html#unix)
 - [Unix cheat sheet](https://www.guru99.com/linux-commands-cheat-sheet.html#1): a good overview of the most important commands to work with Unix
 - If you are working on a Linux or macOS computer, open a terminal and just play around a bit (e.g., copy a file, rename it, navigate through some directories, create a new directory…). Check out the bash tutorials and cheat sheet again if you need it. 
-- ALWAYS be careful with the remove (rm) command - if you delete files with rm, they will not be stored inside your trash bin but will be deleted immediately!
+- ALWAYS be careful with the remove (*rm*) command - if you delete files with rm, they will not be stored inside your trash bin but will be deleted immediately!
 - Type *name-of-function --help* in the terminal to get more information about a specific function.
 
 
 ## 📐 BIDS - keeping things organized
 As sharing data becomes more and more important in the community, researchers started to organize imaging data in a structured way that should be the same between labs. This simplifies data sharing and also keeps your project well organized. I would recommend to have a "rawData" folder where the original images for your project are stored as they are. Save the scripts in a separate directory, as well as all the preprocessing outputs that are generated (e.g., "preprocData"). 
-BIDS refers to "Brain Imaging Data Structure" and is one way to structure all projects in the exact same way to ease sharing and collaborations but also to keep things clean for yourself. Find the main description [here](https://bids.neuroimaging.io/). 
+BIDS refers to "Brain Imaging Data Structure" and is one way to structure all projects in the exact same way to ease sharing and collaborations but also to keep things clean for yourself. 
+- Find the main description [here](https://bids.neuroimaging.io/). 
+- Find some examples on [openneuro](https://openneuro.org/), a platform for openly sharing (anonymized) MRI data. 
 
 
 ## 🏄🏼‍♀️ FreeSurfer - analyzing structural MRI
-As we have learned some basics about MRI and bash now, we can approach the funny part of the story: analyzing data! Various software is available for analyzing structural MRI (e.g., T1-weighted images). [FreeSurfer](https://freesurfer.net/) has the advantage over other software that it not only includes the individual voxels (= "cubes" that make up an MRI image; pixels in 3D space) in the analysis, but also reconstructs the brain surface. This makes the analysis more accurate. 
-By pre-processing a T1-weighted MR image, we want to edit the image (e.g., intensity corrections) and remove inaccuracies - quite similar to Photoshop. Our goal in the end is to extract brain measures such as brain volume or the thickness of the cortex. These measures can then be compared between a group of patients and healthy controls, for example.
+Now that we've learned some basics about MRI and bash, we can move on to the fun part of the story: analyzing data! There is various software available for analyzing structural MRI images (e.g. T1-weighted images). [FreeSurfer](https://freesurfer.net/) has the advantage over other software that it not only includes the individual voxels (= "cubes" that make up an MRI image; pixels in 3D space) in the analysis, but also reconstructs the brain surface. This makes the analysis more accurate. 
+By preprocessing a T1-weighted MR image, we want to edit the image (e.g., intensity corrections) and remove inaccuracies - very similar to Photoshop. Our ultimate goal is to extract brain measures such as brain volume or cortex thickness. These measures can then be compared, for example, between a group of patients and healthy control subjects.
 - Best practices for analyzing structural MRI in the context of neurodevelopmental disorders are well outlined by [Lea Backhausen](https://doi.org/10.1007%2Fs11065-021-09496-2)
 - A very nice [tutorial](https://www.youtube.com/watch?v=6wxJ1up-E7E&list=PLIQIswOrUH6_DWy5mJlSfj6AWY0y9iUce&ab_channel=AndrewJahn) how to use FreeSurfer to process T1w images, again by Andrew Jahn
 - How to navigate Freeview, a tool to visualize FreeSurfer output, is explained in [this tutorial](https://youtu.be/Mv-ECowxq2o)
@@ -64,8 +66,17 @@ There are several algorithms and approaches at hand, and the problem is not yet 
 
 
 ## 🧐 Statistical analysis
-Now that we have preprocessed the images, we want to extract actually meaningful information and do some analyses. A common research question in neuroimaging is whether a case and a control group differ in a certain brain measure. Thereby, the brain measure can be analyzed voxel-/vertexwise or in a certain parcellation (defined by an atlas), such as the Desikan-Killiany parcellation, the default parcellation in FreeSurfer. A parcellation is nothing else than looking at your brain measure with less spatial resolution. Instead of thousands of voxels or vertices, you summarize the brain measure into a few (hundred) regions of interest. As an advantage, the analysis is simpler and the number of statistical tests will be less. On the other hand, summarizing regions might lead to underestimating the results or even missing significantly different regions.
+After preprocessing the images, we want to extract actually meaningful information and do some analyses. A common research question in neuroimaging is whether a case and a control group differ in a certain brain measure. Thereby, the brain measure can be analyzed voxel-/vertexwise or in a certain parcellation (defined by an atlas), such as the Desikan-Killiany parcellation, the default parcellation in FreeSurfer. A parcellation is nothing else than looking at your brain measure with less spatial resolution. Instead of thousands of voxels or vertices, the brain measure of interest is summarized into a few (hundred) regions of interest. As an advantage, the analysis is simpler and the number of statistical tests will be less. On the other hand, summarizing regions might lead to underestimating the results or even missing significantly different regions.
 There are plenty of good resources for statistical analyses and you will definitely have to find some for your specific need. I will list a few general sources, which helped me a lot to understand general concepts and ideas, targeted to neuroimaging:
 - Jeanette Mumford's ["mumfordbrainstats" tutorials](https://www.youtube.com/@mumfordbrainstats)
 - Russel Poldrack's ["Statistical Thinking for the 21st Century"](https://statsthinking21.github.io/statsthinking21-core-site/)
 - the ["Statistics 101" channel](https://www.youtube.com/watch?v=0Vj2V2qRU10&list=PLIeGtxpvyG-KA-BLkL391X__r0kU4_hm5&ab_channel=BrandonFoltz), especially the playlists on ANOVA, linear regression, and how the two collapse into the general linear model (GLM)
+
+
+There is some statistical software to perform neuroimaging analyses such as [SPSS Statistics](https://www.ibm.com/products/spss-statistics) that is really helpful. However, a license is required and workflow automation is not straightforward. Since big data becomes more important in neuroimaging and you will need Python for some imaging software anyways, I **really** recommend to learn some programming with Python. It allows you to handle big datasets (e.g., with pandas), to statistically analyze data (e.g., using scipy or sklearn), to nicely visualize your results (with matplotlib and seaborn), and even to directly work with neuroimaging data (e.g., nibabel). There are plenty of open source courses to learn it and your learning curve will be steep at the beginning. You will benefit from the skills early and see some results! 
+- [Basic Python Courses on edx](https://www.edx.org/certificates/professional-certificate/the-georgia-institute-of-technology-introduction-to-python-programming), the course material is free, the fees are solely for the certificate. 
+- [Python basics for data science](https://learning.edx.org/course/course-v1:IBM+PY0101EN+3T2020/home)
+- [Analyzing data with Python](https://learning.edx.org/course/course-v1:IBM+DA0101EN+3T2020/home)
+- [Visualizing data with Python](https://learning.edx.org/course/course-v1:IBM+DV0101EN+3T2020/home)
+
+Alternatively, Matlab and/or R are also powerful programming languages that are widely used in neuroimaging research. Knowing one programming knowledge allows you to more quickly and easily learn others - the concepts are mostly very similar. 

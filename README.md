@@ -25,14 +25,21 @@ With *ls -l*, you can list the current permissions for files and folders:
 	-rwxr--r-x  1 my_user  my_group      800 22 Apr 09:09 file1.txt
 	
 The letters rwx stand for **r**ead, **w**rite, and e**x**ecute. 
-| who | what |
-| ---------- | --------- | 
-| owner | -rwx------ |
-| group | ----rwx--- |   
-| others | -------rwx |
+| who | abbreviation | permissions |
+| ---------- | ------- | --------- | 
+| owner/user | u | -rwx------ |
+| group | g | ----rwx--- |   
+| others | o | -------rwx |
 
 Can you figure out the permissions for file *file1.txt* from above?
 *solution: my_user can read, modify, and execute, the group my_group can only read the file, all others can read and execute the file.*
+
+
+You can edit permissions with *chmod* if you are the owner. To add writing and executing permissions for my_group:
+
+	chmod g+wx file1.txt
+	
+For folders, add -R to also change permissions inside the folder (e.g., chmod o+rx -R my_folder). 
 
 
 ## 📐 BIDS - keeping things organized

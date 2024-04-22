@@ -39,7 +39,7 @@ You can edit permissions with *chmod* if you are the owner. To add writing and e
 
 	chmod g+wx file1.txt
 	
-For folders, add -R to also change permissions inside the folder (e.g., chmod o+rx -R my_folder). 
+For folders, add -R to also change permissions inside the folder (e.g., *chmod o+rx -R my_folder*). 
 
 
 ## 📐 BIDS - keeping things organized

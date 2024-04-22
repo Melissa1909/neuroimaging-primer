@@ -21,8 +21,12 @@ Bash is a command-line interpreter or shell for Unix-like operating systems. It 
 ### bash - changing permissions
 Unix permissions allow or prevent different (groups of) users from viewing, modifying or executing files.
 With *ls -l*, you can list the current permissions for files and folders:
+
 	**-rwxr--r-x**  1 my_user  my_group      800 22 Apr 09:09 file1.txt
+	
 The letters rwx stand for **r**ead, **w**rite, and e**x**ecute. 
+| who | what |
+| ---------- | --------- | 
 | owner | -rwx------ |
 | group | ----rwx--- |   
 | others | -------rwx |

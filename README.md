@@ -23,13 +23,10 @@ Unix permissions allow or prevent different (groups of) users from viewing, modi
 With *ls -l*, you can list the current permissions for files and folders:
 	**-rwxr--r-x**  1 my_user  my_group      800 22 Apr 09:09 file1.txt
 The letters rwx stand for **r**ead, **w**rite, and e**x**ecute. 
-\begin{center}
-\begin{tabular}{ c c }
- owner & -rwx------  \\ 
- group & ----rwx---  \\    
- others & -------rwx
-\end{tabular}
-\end{center}
+| owner | -rwx------ |
+| group | ----rwx--- |   
+| others | -------rwx |
+
 Can you figure out the permissions for file *file1.txt* from above?
 *solution: my_user can read, modify, and execute, the group my_group can only read the file, all others can read and execute the file.*
 

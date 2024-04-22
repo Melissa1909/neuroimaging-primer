@@ -18,6 +18,22 @@ Bash is a command-line interpreter or shell for Unix-like operating systems. It 
 - Type *name-of-function --help* in the terminal to get more information about a specific function.
 
 
+### bash - changing permissions
+Unix permissions allow or prevent different (groups of) users from viewing, modifying or executing files.
+With *ls -l*, you can list the current permissions for files and folders:
+	**-rwxr--r-x**  1 my_user  my_group      800 22 Apr 09:09 file1.txt
+The letters rwx stand for **r**ead, **w**rite, and e**x**ecute. 
+\begin{center}
+\begin{tabular}{ c c }
+ owner & -rwx------  \\ 
+ group & ----rwx---  \\    
+ others & -------rwx
+\end{tabular}
+\end{center}
+Can you figure out the permissions for file *file1.txt* from above?
+*solution: my_user can read, modify, and execute, the group my_group can only read the file, all others can read and execute the file.*
+
+
 ## 📐 BIDS - keeping things organized
 As sharing data becomes more and more important in the community, researchers started to organize imaging data in a structured way that should be the same between labs. This simplifies data sharing and also keeps your project well organized. I would recommend to have a "rawData" folder where the original images for your project are stored as they are. Save the scripts in a separate directory, as well as all the preprocessing outputs that are generated (e.g., "preprocData"). 
 BIDS refers to "Brain Imaging Data Structure" and is one way to structure all projects in the exact same way to ease sharing and collaborations but also to keep things clean for yourself. 

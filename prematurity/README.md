@@ -1,6 +1,6 @@
 # Prematurity 🤰
 
-## Definitions and overview 💬
+## 💬 Definitions and overview 
 Preterm birth is defined as being born before the 37th week of gestation. It can be further subdivided into very preterm birth (i.e., before the 32nd week) and extreme preterm birth (i.e., before the 26th week). Although mortality after preterm birth declined over the last decades, morbidities are still high. 
 - [Introductory video](https://www.youtube.com/watch?v=F_-WL_90a_A&t=156s&ab_channel=MedicalCentric)
 - [Interview with a doctor](https://www.youtube.com/watch?v=XOT8SzvkiZU&ab_channel=TheTelegraph)
@@ -25,3 +25,7 @@ Preterm brain impacts brain development. Interestingly, these consequences last 
 - Alterations of white matter:
 	- [Altered gray‐to‐white matter tissue contrast](https://doi.org/10.1111/cns.14320)
 	- [Altered Gray Matter Cortical and Subcortical T1-Weighted/T2-Weighted Ratio](https://doi.org/10.1016/j.bpsc.2022.02.013)
+	- [Aberrant cortico-thalamic structural connectivity](https://doi.org/10.1016/j.cortex.2021.04.009)
+- Alterations of grey matter:
+	- [Decreased amygdala volume](https://doi.org/10.1038/s41598-021-84906-2)
+	- [Altered cortical thickness](https://doi.org/10.1002/hbm.25172)

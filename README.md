@@ -54,6 +54,7 @@ Now that we've learned some basics about MRI and bash, we can move on to the fun
 By preprocessing a T1-weighted MR image, we want to edit the image (e.g., intensity corrections) and remove inaccuracies - very similar to Photoshop. Our ultimate goal is to extract brain measures such as brain volume or cortex thickness. These measures can then be compared, for example, between a group of patients and healthy control subjects.
 - Best practices for analyzing structural MRI in the context of neurodevelopmental disorders are well outlined by [Lea Backhausen](https://doi.org/10.1007%2Fs11065-021-09496-2)
 - A very nice [tutorial](https://www.youtube.com/watch?v=6wxJ1up-E7E&list=PLIQIswOrUH6_DWy5mJlSfj6AWY0y9iUce&ab_channel=AndrewJahn) how to use FreeSurfer to process T1w images, again by Andrew Jahn
+- A detailed explanation of all recon-all steps and output files is explained [here](https://surfer.nmr.mgh.harvard.edu/fswiki/ReconAllDevTable)
 - How to navigate Freeview, a tool to visualize FreeSurfer output, is explained in [this tutorial](https://youtu.be/Mv-ECowxq2o)
 
 As Freesurfer’s reconstruction is good but not perfect, we want to check some of the outputs visually. As looking at all images is tedious, FS has developed some handy tools that create a screenshot of the most important segmentations.

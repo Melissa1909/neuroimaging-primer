@@ -18,7 +18,7 @@ Bash is a command-line interpreter or shell for Unix-like operating systems. It 
 - Type *name-of-function --help* in the terminal to get more information about a specific function.
 
 
-### bash - changing permissions
+### 🔐 bash - changing permissions
 Unix permissions allow or prevent different (groups of) users from viewing, modifying or executing files.
 With *ls -l*, you can list the current permissions for files and folders:
 
@@ -97,11 +97,14 @@ There are plenty of good resources for statistical analyses and you will definit
 - Russel Poldrack's ["Statistical Thinking for the 21st Century"](https://statsthinking21.github.io/statsthinking21-core-site/)
 - the ["Statistics 101" channel](https://www.youtube.com/watch?v=0Vj2V2qRU10&list=PLIeGtxpvyG-KA-BLkL391X__r0kU4_hm5&ab_channel=BrandonFoltz), especially the playlists on ANOVA, linear regression, and how the two collapse into the general linear model (GLM)
 
-
-There is some statistical software to perform neuroimaging analyses such as [SPSS Statistics](https://www.ibm.com/products/spss-statistics) that is really helpful. However, a license is required and workflow automation is not straightforward. Since big data becomes more important in neuroimaging and you will need Python for some imaging software anyways, I **really** recommend to learn some programming with Python. It allows you to handle big datasets (e.g., with pandas), to statistically analyze data (e.g., using scipy or sklearn), to nicely visualize your results (with matplotlib and seaborn), and even to directly work with neuroimaging data (e.g., nibabel). There are plenty of open source courses to learn it and your learning curve will be steep at the beginning. You will benefit from the skills early and see some results! 
+### 🐍 Data analysis with Python, R, or Matlab
+There is some statistical software to perform neuroimaging analyses such as [SPSS Statistics](https://www.ibm.com/products/spss-statistics) that is really helpful. However, a license is required and workflow automation is not straightforward. Since big data becomes more important in neuroimaging and you will need Python for some imaging software anyways, I **really** recommend to learn some programming with Python. It allows you to handle big datasets (e.g., with pandas), to statistically analyze data (e.g., using scipy or sklearn), to nicely visualize your results (with matplotlib and seaborn), and even to directly work with neuroimaging data (e.g., nibabel). There are plenty of open source courses to learn it and your learning curve will be steep at the beginning. You will benefit from the skills early on and see some results! 
 - [Basic Python Courses on edx](https://www.edx.org/certificates/professional-certificate/the-georgia-institute-of-technology-introduction-to-python-programming), the course material is free, the fees are solely for the certificate. 
 - [Python basics for data science](https://learning.edx.org/course/course-v1:IBM+PY0101EN+3T2020/home)
 - [Analyzing data with Python](https://learning.edx.org/course/course-v1:IBM+DA0101EN+3T2020/home)
 - [Visualizing data with Python](https://learning.edx.org/course/course-v1:IBM+DV0101EN+3T2020/home)
+- [Neuroimaging and data science](https://neuroimaging-data-science.org/root.html): interactive book with coding exercises targeted to neuroimaging
 
 Alternatively, Matlab and/or R are also powerful programming languages that are widely used in neuroimaging research. Knowing one programming knowledge allows you to more quickly and easily learn others - the concepts are mostly very similar. 
+
+If you want to know more about it, follow me to the coding section of this tutorial! 🥰

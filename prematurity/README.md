@@ -29,3 +29,5 @@ Preterm brain impacts brain development. Interestingly, these consequences last 
 - Alterations of grey matter:
 	- [Decreased amygdala volume](https://doi.org/10.1038/s41598-021-84906-2)
 	- [Altered cortical thickness](https://doi.org/10.1002/hbm.25172)
+	
+An important [meta-analysis by Claire Kelly and colleagues](https://doi.org/10.1016/j.neubiorev.2023.105082) investigating brain changes in preterm adults has found that subcortical lesions seem to be widespread, i.e., the thalamus, amygdala, basal ganglia, hippocampus, and cerebellum are affected, whereas cortical aberrations seem to be regionally specific, mostly affecting the lateral temporal cortex.

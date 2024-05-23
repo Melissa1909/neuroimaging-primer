@@ -108,3 +108,13 @@ There is some statistical software to perform neuroimaging analyses such as [SPS
 Alternatively, Matlab and/or R are also powerful programming languages that are widely used in neuroimaging research. Knowing one programming knowledge allows you to more quickly and easily learn others - the concepts are mostly very similar. 
 
 If you want to know more about it, follow me to the coding section of this tutorial! 🥰
+
+
+## ‼️ Open and reproducible science - best practices for your daily work
+A topic that is widely discussed for the last few years: the [reproducibility crisis](https://en.wikipedia.org/wiki/Replication_crisis)... The most studies published in peer-reviewed journals actually cannot be reproduced or are proved to be false! Read more on this [here](10.1371/journal.pmed.0020124). I heard a good and inspirational talk by Malika Ihle with recommendations of best practices to make your research more reliable and reproducible. She shared her [presentation slides](https://osf.io/4xngc) with valuable sources. Among them:
+- Generate portable and self-contained projects: a project should have a standardized structure and a list of all software versions you used
+- Automize workflow: analyze your data using code instead of random click-based analysis
+- Create a dynamic report: comment your code, what it does and most importantly why you took the decision to use function x or to step y
+- Version control: use git (or similar) to keep track of the changes in your code
+
+This will help science to get closer to the truth instead of just producing results. Apart from making science more reproducible, in the long-term, this will save you A LOT of time structuring new projects and figuring out what you did. 

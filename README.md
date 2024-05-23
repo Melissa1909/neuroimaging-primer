@@ -84,13 +84,13 @@ If you want to get more advanced in neuroimaging, I advise you to go through the
 - [Course material](https://open.win.ox.ac.uk/pages/fslcourse/website/online_materials.html)
 
 
-## ⚖️ Multi-site studies - NeuroCombat for scanner harmonization
+## ⚖️ Multi-site studies - NeuroCombat for scanner harmonization to get rid of hardware effects
 Big data is becoming more and more important for neuroimaging research. Since a single site typically cannot acquire more than a (few) hundred MRI scans, data sharing and collaborative efforts such as the [ENIGMA consortium](https://enigma.ini.usc.edu/) are becoming increasingly popular. However, this requires to correct for the effect of different scanner hardware and scanning protocols, which introduces bias in the data.  
 There are several algorithms and approaches at hand, and the problem is not yet entirely solved. [NeuroCombat](https://doi.org/10.1016/j.neuroimage.2017.11.024) provides a great framework to relatively easily correct for the scanner effect while retaining biological variance.
 - The python-based software is provided on [Github](https://github.com/Jfortin1/neuroCombat). 
 
 
-## 🧐 Statistical analysis
+## 🧐 Statistical analysis - interpret your data meaningfully
 After preprocessing the images, we want to extract actually meaningful information and do some analyses. A common research question in neuroimaging is whether a case and a control group differ in a certain brain measure. Thereby, the brain measure can be analyzed voxel-/vertexwise or in a certain parcellation (defined by an atlas), such as the Desikan-Killiany parcellation, the default parcellation in FreeSurfer. A parcellation is nothing else than looking at your brain measure with less spatial resolution. Instead of thousands of voxels or vertices, the brain measure of interest is summarized into a few (hundred) regions of interest. As an advantage, the analysis is simpler and the number of statistical tests will be less. On the other hand, summarizing regions might lead to underestimating the results or even missing significantly different regions.
 There are plenty of good resources for statistical analyses and you will definitely have to find some for your specific need. I will list a few general sources, which helped me a lot to understand general concepts and ideas, targeted to neuroimaging:
 - Jeanette Mumford's ["mumfordbrainstats" tutorials](https://www.youtube.com/@mumfordbrainstats)
@@ -111,7 +111,7 @@ If you want to know more about it, follow me to the coding section of this tutor
 
 
 ## ‼️ Open and reproducible science - best practices for your daily work
-A topic that is widely discussed for the last few years: the [reproducibility crisis](https://en.wikipedia.org/wiki/Replication_crisis)... The most studies published in peer-reviewed journals actually cannot be reproduced or are proved to be false! Read more on this [here](10.1371/journal.pmed.0020124). I heard a good and inspirational talk by Malika Ihle with recommendations of best practices to make your research more reliable and reproducible. She shared her [presentation slides](https://osf.io/4xngc) with valuable sources. Among them:
+A topic that is widely discussed for the last few years: the [reproducibility crisis](https://en.wikipedia.org/wiki/Replication_crisis)... The most studies published in peer-reviewed journals actually cannot be reproduced or are proved to be false! Read more on this [here](10.1371/journal.pmed.0020124). I heard a good and inspirational talk by Malika Ihle, open science center coordinator at LMU Munich, with recommendations of best practices to make your research more reliable and reproducible. She shared her [presentation slides](https://osf.io/4xngc) with valuable sources. Among them:
 - Generate portable and self-contained projects: a project should have a standardized structure and a list of all software versions you used
 - Automize workflow: analyze your data using code instead of random click-based analysis
 - Create a dynamic report: comment your code, what it does and most importantly why you took the decision to use function x or to step y

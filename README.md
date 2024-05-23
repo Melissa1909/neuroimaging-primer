@@ -104,6 +104,7 @@ There is some statistical software to perform neuroimaging analyses such as [SPS
 - [Analyzing data with Python](https://learning.edx.org/course/course-v1:IBM+DA0101EN+3T2020/home)
 - [Visualizing data with Python](https://learning.edx.org/course/course-v1:IBM+DV0101EN+3T2020/home)
 - [Neuroimaging and data science](https://neuroimaging-data-science.org/root.html): interactive book with coding exercises targeted to neuroimaging
+- [different tutorials listed by LMU open science center](https://github.com/lmu-osc)
 
 Alternatively, Matlab and/or R are also powerful programming languages that are widely used in neuroimaging research. Knowing one programming knowledge allows you to more quickly and easily learn others - the concepts are mostly very similar. 
 

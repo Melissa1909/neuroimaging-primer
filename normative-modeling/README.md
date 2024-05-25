@@ -11,7 +11,7 @@ Two wonderful reviews by Andre Marquand summarizing these ideas:
 With big data becoming more and more important in neuroscience, in the past 2-3 years, there were several initiatives that collected huge amounts of data (> 40,000 subjects) to model normative growth trajectories of the brain. You can compare these to [growth charts of the human body](https://www.cdc.gov/growthcharts/clinical_charts.htm) applied in pediatrics to see whether a child's height and weight is developing as expected with respect to their age and sex. The idea is the same: model how the brain develops across the lifespan with respect to age and sex. The existing growth charts differ with respect to the underlying data, the normative model used to create the charts, and the resolution/brain atlas used. The most popular lifespan growth charts are listed below:
 
 | name | normative model | age range | resolution | website with pretrained models | 
-| ---------- | ------- | --------- | 
+| ---------- | ------- | --------- | --------- | --------- | 
 | [BrainCharts by Bethlehem et al.](https://doi.org/10.1038/s41586-022-04554-y) | GAMLSS | 0-100 years | 68 regions based on Desikan-Killiany atlas | https://brainchart.shinyapps.io/brainchart/ |
 | [braincharts by Rutherford et al.](https://doi.org/10.7554%2FeLife.72904) | Bayesian Linear Regression | 3-100 years | Destrieux atlas | https://github.com/predictive-clinical-neuroscience/braincharts |
 | [CentileBrain by Frangou et al.](https://doi.org/10.1002/hbm.25364) | Fractional Polynomial Regression | 3-90 years | 68 regions based on Desikan-Killiany atlas | https://centilebrain.org/#/ | 

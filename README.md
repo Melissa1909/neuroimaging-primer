@@ -10,6 +10,7 @@ Studying the brain has undergone different periods, tightly linked to the availa
 
 ## 🖥️ Bash - a neuroimaging researcher's language
 Bash is a command-line interpreter or shell for Unix-like operating systems. It provides a command-line interface for users to interact with the operating systems by executing commands - as if you would talk to the computer and ask to do things for you. Bash allows you to navigate the file system, run programs,  and automate tasks through scripting. Many neuroimaging softwares like [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/) or [FreeSurfer](https://freesurfer.net/) require you to navigate in bash. It may feel unusual at the beginning, but you will learn quickly and experience that scripting makes your life as a neuroimaging researcher a lot easier... So check out the following tutorials:
+- An article in Nature about why working with the command line is totally awesome: [Five reasons why researchers should learn to love the command line](https://www.nature.com/articles/d41586-021-00263-0) - just to enhance your motivation 😉
 - [Unix intro by the amazing Andrew Jahn including video tutorial](https://andysbrainbook.readthedocs.io/en/latest/unix/Unix_Intro.html)
 - [Unix intro by FSL](https://open.win.ox.ac.uk/pages/fslcourse/website/online_materials.html#unix)
 - [Unix cheat sheet](https://www.guru99.com/linux-commands-cheat-sheet.html#1): a good overview of the most important commands to work with Unix

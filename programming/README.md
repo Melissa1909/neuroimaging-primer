@@ -24,7 +24,7 @@ Imagine you want to reproduce a result from a paper, the authors were so kind to
 <font color='red'>
 neuromaps 0.0.5 requires numpy >= 2.0.0, but you have numpy 1.7.5 which is incompatible. 
 </font> 
-```
+``
 Annoying! 🙄
 
 To avoid such conflicts, you can pack your software in a so called `docker container`, a way to build, run, and ship your software in a consistent and reproducible way. You can imagine a docker container really like a container: all requirements and dependencies of a software are packed into an isolated environment separated from the rest of your computer. This allows you, for example, to have several versions of a Python library installed in parallel, to share the exact versions of the libraries you have used for a project, or - in the case of our office - to ship some libraries that cannot be downloaded on our servers because the computers there do not have internet access. 

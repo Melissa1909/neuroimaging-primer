@@ -20,10 +20,8 @@ One thing I struggled with a lot in the beginning was finding a proper way to or
 
 ## 🐳 Docker 
 Imagine you want to reproduce a result from a paper, the authors were so kind to share their complete pipelines on Github (🥇) - but the code is not working on your machine... You may run into something like: 
-``python
-<font color='red'>
-neuromaps 0.0.5 requires numpy >= 2.0.0, but you have numpy 1.7.5 which is incompatible. 
-</font> 
+``
+neuromaps 0.0.5 requires numpy >= 2.0.0, but you have numpy 1.7.5 which is incompatible.  
 ``
 Annoying! 🙄
 

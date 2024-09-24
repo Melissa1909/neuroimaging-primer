@@ -9,7 +9,7 @@ Preterm birth is defined as being born before the 37th week of gestation. It can
 
 ## 👶 Basics of brain development 
 At the time of preterm birth, the brain is in a phase of complex and rapid development. In order to understand the consequences of preterm birth, you should know the most important steps of brain development. 
-- [The basics of brain development](https://doi.org/10.1007/s11065-010-9148-4c)
+- [The basics of brain development](https://doi.org/10.1007/s11065-010-9148-4)
 
 
 ## 🦠 Pathomechanisms after preterm birth 

@@ -63,6 +63,15 @@ As Freesurfer’s reconstruction is good but not perfect, we want to check some 
 - Find some helpful guidelines to assess image quality provided by ENIGMA [here](https://enigma.ini.usc.edu/protocols/imaging-protocols/). 
 
 
+*Specific note for our office:* the default version of FreeSurfer in our office is 5.3.0. However, this is really outdated. You can change the version by typing the following in the terminal:
+
+	cd
+	emacs .bashrc
+	
+This will open the `.bashrc` file in emacs, a common text editor for Linux. The `.bashrc` file is a script that is automatically executed when a user logs in. It contains several configurations and settings, e.g., where FreeSurfer is installed on your machine. To change the version, scroll down until you see `export FREESURFER_HOME=/sw/freesurfer/5.3.0`. Change it to the latest version (e.g., 7.3.2) and save the change with `Ctrl + X + S`.  Exit the terminal and open a new one to apply the change. You're ready to FreeSurf now!
+
+
+
 ## 🔧 FSL - fslutils and registration tools
 [FSL](https://fsl.fmrib.ox.ac.uk/fsl/fslwiki/) is another really handy software to work with MRI data of different modalities. There is also a pipeline to process T1w images called *fsl_anat*. It is quicker compared to FreeSurfer's *recon_all* (takes ~1h) but not as precise in calculating surface-related measures as cortical thickness (because no surfaces are specifically reconstructed like in FreeSurfer). It also has a processing tool for functional MRI called fsl *FEAT*. 
 

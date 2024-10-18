@@ -63,7 +63,7 @@ As Freesurfer’s reconstruction is good but not perfect, we want to check some 
 - Find some helpful guidelines to assess image quality provided by ENIGMA [here](https://enigma.ini.usc.edu/protocols/imaging-protocols/). 
 
 
-*Specific note for our office:* the default version of FreeSurfer in our office is 5.3.0. However, this is really outdated. You can change the version by typing the following in the terminal:
+*Specific note for TUM-NIC office:* the default version of FreeSurfer in our office is 5.3.0. However, this is really outdated. You can change the version by typing the following in the terminal:
 
 	cd
 	emacs .bashrc
@@ -118,7 +118,7 @@ There is some statistical software to perform neuroimaging analyses such as [SPS
 
 Alternatively, Matlab and/or R are also powerful programming languages that are widely used in neuroimaging research. Knowing one programming knowledge allows you to more quickly and easily learn others - the concepts are mostly very similar. 
 
-If you want to know more about it, follow me to the coding section of this tutorial! 🥰
+If you want to know more about it, follow me to the [coding section](https://github.com/Melissa1909/neuroimaging-primer/tree/main/programming) of this tutorial! 🥰
 
 
 ## ‼️ Open and reproducible science - best practices for your daily work
@@ -129,3 +129,7 @@ A topic that is widely discussed for the last few years: the [reproducibility cr
 - Version control: use git (or similar) to keep track of the changes in your code
 
 This will help science to get closer to the truth instead of just producing results. Apart from making science more reproducible, in the long-term, this will save you A LOT of time structuring new projects and figuring out what you did. 
+
+
+## 🤿 Dive deeper into more advanced topics...
+Congratulations! You already learned a lot about neuroimaging and how to analyze MRI data! If you want to dive deeper into some specific topics, check out the folders above! You will find more information about neurodevelopmental disorders, functional MRI, specific modeling approaches, and how to investigate molecular underpinnings of brain aberrations visualized with MRI. 

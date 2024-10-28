@@ -131,5 +131,16 @@ A topic that is widely discussed for the last few years: the [reproducibility cr
 This will help science to get closer to the truth instead of just producing results. Apart from making science more reproducible, in the long-term, this will save you A LOT of time structuring new projects and figuring out what you did. 
 
 
+## 🧩 Parcellations
+- [Overview on available parcellations](https://www.lead-dbs.org/helpsupport/knowledge-base/atlasesresources/cortical-atlas-parcellations-mni-space/)
+
+
+## 📊 Reference space(s) like MNI
+- [MNI space(s)](https://www.lead-dbs.org/about-the-mni-spaces/)
+- [Another list of common reference spaces](https://bids-specification.readthedocs.io/en/v1.3.0/99-appendices/08-coordinate-systems.html#template-based-coordinate-systems)
+- [Python toolbox that stores several reference templates](https://www.templateflow.org/)
+- [neuromaps by Markello et al.](10.1038/s41592-022-01625-w)
+
+
 ## 🤿 Dive deeper into more advanced topics...
 Congratulations! You already learned a lot about neuroimaging and how to analyze MRI data! If you want to dive deeper into some specific topics, check out the folders above! You will find more information about neurodevelopmental disorders, functional MRI, specific modeling approaches, and how to investigate molecular underpinnings of brain aberrations visualized with MRI. 

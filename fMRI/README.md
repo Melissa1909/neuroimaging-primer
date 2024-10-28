@@ -13,8 +13,7 @@ The BOLD (Blood-Oxygen-Level Dependent) signal is a critical measure in fMRI tha
 
 Taken together, the BOLD signal is interpreted as an indirect measure of neural activity (actually changes in oxygen consumption are measured). Since the hemodynamic response takes 4-6 seconds to peak after a neural event, the BOLD signal is not an instantaneous indicator of neural firing but rather a delayed, smoothed-out representation of activity. It is widely used in neuroscience to map active brain regions during various tasks, resting states, or sensory experiences.
 
-Find a nice summary in [this](https://www.youtube.com/watch?v=9sQWG46kArE&ab_channel=Feldmann-WustefeldLab 
-https://mriquestions.com/does-boldbrain-activity.html) video.
+Find a nice summary in [this](https://www.youtube.com/watch?v=9sQWG46kArE&ab_channel=Feldmann-WustefeldLab) video.
 
 
 ## 📈 How the BOLD signal changes over time - the hemodynamic response function
@@ -23,7 +22,7 @@ The **hemodynamic response function (HRF)** describes the BOLD signal with respe
 2. Peak Response: Shortly after the dip, the blood flow dramatically increases to overcompensate for the oxygen demand, resulting in a peak in the BOLD signal. This is the most prominent phase of the HRF and occurs around 4-6 seconds after the neural event. The peak response is what is primarily captured in fMRI as a marker of brain activity.
 3. Post-Stimulus Undershoot: After the peak, the BOLD signal decreases and sometimes even dips below the baseline level. This phase happens because blood flow and volume take a bit longer to return to their resting state, even though oxygen consumption has normalized. 
 
-[This website](https://mriquestions.com/does-boldbrain-activity.html) shows a HRF and a. clear explanation to it and lists further sources.
+[This website](https://mriquestions.com/does-boldbrain-activity.html) shows a HRF and a clear explanation to it and lists further sources.
 
 
 ## 🫀 Why do vessels dilate? - the neurovascular unit

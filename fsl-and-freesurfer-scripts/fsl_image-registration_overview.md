@@ -1,6 +1,8 @@
 # FSL - Image Registration Overview
 
 ## linear transformation: flirt
+Aligns images using a linear mapping represented by a transformation matrix.
+
     • Suitable for intra-subject or inter-subject registration.
     • Can align images from the same or different modalities.
     • Transformation parameters are described by a matrix.
@@ -17,18 +19,20 @@
             ▪ Aligning images from different subjects, especially in atlas-based registration.
             ▪ Used as a preprocessing step for non-linear transformations like fnirt.
 
-# nonlinear transformation: fnirt
+## nonlinear transformation: fnirt
+Aligns images by allowing local deformations, which can warp structures to improve alignment.
+
     • Intra-subject registration, typically for images in the same modality.
     • More flexible and accurate for aligning images with large differences in shape or local distortions.
     • Transformation is represented as a 3D deformation field (warp field), stored as 3D volume.
     • Accounts for local differences between images that linear transformations cannot correct.
-    • **'Application'**  
-    • High-resolution structural alignment (e.g., T1-weighted MRI to atlas).
-    • Inter-subject registration for precise analysis.
-    • Warping anatomical images to standard spaces.
-    • Dealing with significant anatomical variability (e.g., tumors, atrophy).
+    • Application:
+        ◦ High-resolution structural alignment (e.g., T1-weighted MRI to atlas).
+        ◦ Inter-subject registration for precise analysis.
+        ◦ Warping anatomical images to standard spaces.
+        ◦ Dealing with significant anatomical variability (e.g., tumors, atrophy).
 
-# cost functions
+## cost function
 To  quantify the alignment quality between two images during image registration or normalization. 
 It provides a measure of how well the transformation parameters (e.g., translation, rotation, scaling) align the images.
 
@@ -63,7 +67,7 @@ It provides a measure of how well the transformation parameters (e.g., translati
         ◦ Features: Sensitive to anatomical boundaries rather than voxel intensities.
         ◦ Common Applications: Aligning functional EPI images to structural MRI.
         
-# interpolations
+# interpolation
 To estimate intensity values at non-grid positions (e.g., after transforming an image) to resample or reconstruct the image.
 It ensures that the voxel intensities in the new coordinate space are computed smoothly and accurately after applying a transformation.
 

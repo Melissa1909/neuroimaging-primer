@@ -4,7 +4,7 @@
     • Suitable for intra-subject or inter-subject registration.
     • Can align images from the same or different modalities.
     • Transformation parameters are described by a matrix.
-    • **'degrees of freedom'** (DOF, number of parameters adjusted during transformation)
+    • degrees of freedom (DOF, number of parameters adjusted during transformation):
         ◦ 1. Rigid Body (6 DOF):
             ▪ 3 rotations + 3 translations.
             ▪ Preserves shapes and sizes of structures.
@@ -29,7 +29,9 @@
     • Dealing with significant anatomical variability (e.g., tumors, atrophy).
 
 # cost functions
-To  quantify the alignment quality between two images during image registration or normalization. It provides a measure of how well the transformation parameters (e.g., translation, rotation, scaling) align the images.
+    To  quantify the alignment quality between two images during image registration or normalization. 
+    It provides a measure of how well the transformation parameters (e.g., translation, rotation, scaling) align the images.
+
     • Least Squares (Sum of Squared Differences, SSD):
         ◦ Definition: Measures the squared intensity difference between corresponding voxels.
         ◦ Use Case: Same modality, same brightness, and contrast.
@@ -62,7 +64,9 @@ To  quantify the alignment quality between two images during image registration 
         ◦ Common Applications: Aligning functional EPI images to structural MRI.
         
 # interpolations
-To estimate intensity values at non-grid positions (e.g., after transforming an image) to resample or reconstruct the image. It ensures that the voxel intensities in the new coordinate space are computed smoothly and accurately after applying a transformation.
+To estimate intensity values at non-grid positions (e.g., after transforming an image) to resample or reconstruct the image.
+It ensures that the voxel intensities in the new coordinate space are computed smoothly and accurately after applying a transformation.
+
     • Nearest Neighbor (NN)
         ◦ Definition: Assigns the intensity of the nearest voxel to the new position.
         ◦ Use Case: Binary masks, labels.

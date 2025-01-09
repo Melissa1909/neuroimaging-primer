@@ -1,6 +1,6 @@
 # FSL - Image Registration Overview
 
-# linear transformation: flirt
+## linear transformation: flirt
     • Suitable for intra-subject or inter-subject registration.
     • Can align images from the same or different modalities.
     • Transformation parameters are described by a matrix.
@@ -29,8 +29,8 @@
     • Dealing with significant anatomical variability (e.g., tumors, atrophy).
 
 # cost functions
-    To  quantify the alignment quality between two images during image registration or normalization. 
-    It provides a measure of how well the transformation parameters (e.g., translation, rotation, scaling) align the images.
+To  quantify the alignment quality between two images during image registration or normalization. 
+It provides a measure of how well the transformation parameters (e.g., translation, rotation, scaling) align the images.
 
     • Least Squares (Sum of Squared Differences, SSD):
         ◦ Definition: Measures the squared intensity difference between corresponding voxels.

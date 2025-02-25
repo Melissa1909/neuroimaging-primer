@@ -24,3 +24,7 @@ If you want to address a structure where no large-scale, population-based normat
 - [Readthedocs](https://pcntoolkit.readthedocs.io/en/latest/) with all functions explained
 
 There are also further frameworks and algorithms, which you can explore beyond the PCNtoolkit.
+
+
+# 📚 Further reading and listening
+- [OHBM 2022 Symposium](https://www.youtube.com/watch?v=imbknEvdJOo&ab_channel=OrganizationforHumanBrainMapping) led by Andre Marquand on normative modeling

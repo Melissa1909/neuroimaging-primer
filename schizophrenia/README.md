@@ -12,7 +12,9 @@ To get a glimpse into the disorder, I have collected some sources that demonstra
 
 ## 🧠 MRI findings in schizophrenia
 - [Overview about the disorder](https://doi.org/10.1001/jamapsychiatry.2019.3360) 
-
+- [Schizophrenia and Dopamine] (https://doi.org/10.1016/j.tins.2018.12.004)
+- [Rethinking Schizophrenia] (https://doi.org/10.1038/nature09552) 
+- [Imaging Schizophrenia] (https://doi.org/10.3389/fpsyt.2022.925476) 
 
 
 

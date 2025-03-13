@@ -170,4 +170,12 @@ Overview of common statistical tests for group comparisons
   - Independence of errors (after accounting for random effects) 
 - Testing assumptions:  
   - Distribution-specific residual diagnostics 
-  - Primarily visual diagnostics 
+  - Primarily visual diagnostics
+- Families 
+  - Gaussian: response variable is continuous and normally distributed 
+  - Binomial: response variable is binary or represents proportions 
+  - Poisson: response variable counts events occurring within a fixed period or space 
+  - Negative Binomial: response variable is count data, but the variance exceeds the mean (overdispersed data) 
+  - Gamma: response variable is continuous and positive (i.e., strictly greater than 0) with skewed distributions 
+  - Inverse Gaussian: response variable is continuous and positive, with a highly skewed distribution 
+  - Tweedie: response variable is continuous and has a distribution that combines both normal and Poisson characteristics 

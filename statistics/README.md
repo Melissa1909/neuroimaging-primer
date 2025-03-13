@@ -45,6 +45,7 @@ Overview of common statistical tests for group comparisons
   - Normality of differences: Shapiro-Wilk test, Q-Q plots 
   - Alternative if assumptions violated: Wilcoxon signed-rank test (non-parametric) 
 
+###  ANOVAs (Analysis of Variance)
 🔵 **One-way ANOVA** 
 - Purpose: Compare means across three or more independent groups 
 - Key features:  

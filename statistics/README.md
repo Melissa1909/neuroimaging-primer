@@ -70,16 +70,16 @@ Overview of common statistical tests for group comparisons
   - Accounts for within-subject correlation 
   - Handles multiple time points 
 - Limitations:  
-- Cannot handle missing data (requires complete cases) 
-- Assumes sphericity (often violated in longitudinal data) 
-- Rigid correlation structure (compound symmetry) 
+  - Cannot handle missing data (requires complete cases) 
+  - Assumes sphericity (often violated in longitudinal data) 
+  - Rigid correlation structure (compound symmetry) 
 - Assumptions:  
-- Independence between subjects 
-- Normality of residuals 
-- Sphericity (equal variances of differences between pairs) 
+  - Independence between subjects 
+  - Normality of residuals 
+  - Sphericity (equal variances of differences between pairs) 
 - Testing assumptions:  
-- Normality: Shapiro-Wilk, Q-Q plots 
-- Sphericity: Mauchly's test 
+  - Normality: Shapiro-Wilk, Q-Q plots 
+  - Sphericity: Mauchly's test 
 - Alternative if assumptions violated: Greenhouse-Geisser or Huynh-Feldt corrections, Friedman test (non-parametric) 
 
 🔵 **Mixed ANOVA** 

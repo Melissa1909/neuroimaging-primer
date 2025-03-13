@@ -3,7 +3,7 @@
 ## Group comparisons
 Overview of common statistical tests for group comparisons
 
-![Group_comparisions](https://github.com/Melissa1909/neuroimaging-primer/blob/main/statistics/statistical-tests-comparison.svg)
+![Group_comparisions]([https://github.com/Melissa1909/neuroimaging-primer/blob/main/statistics/statistical-tests-comparison.svg](https://github.com/Melissa1909/neuroimaging-primer/blob/main/statistics/images/group-statistics.png)
 
 ### 📊 t-tests
 

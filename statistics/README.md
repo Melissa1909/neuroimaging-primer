@@ -4,6 +4,7 @@
 Overview of common statistical tests for group comparisons
 
 🔵 **t-tests** 🔵
+
 **Independent Samples t-test**
 - Purpose: Compare means between two independent groups 
 - Key features:  
@@ -39,6 +40,7 @@ Overview of common statistical tests for group comparisons
   - Alternative if assumptions violated: Wilcoxon signed-rank test (non-parametric) 
 
 🔵 **General Linear Models (GLM)** 🔵
+
 - Purpose: Unified framework that includes t-tests, ANOVA, ANCOVA, and regression 
 - Primary formula: Y = b*X + e 
 
@@ -116,6 +118,7 @@ Overview of common statistical tests for group comparisons
   - Homogeneity of regression slopes: Testing interaction between group and covariate 
 
 🔵 **Linear Mixed Models (LMM)** 🔵
+
 - Purpose: Account for hierarchical, clustered, or longitudinal data 
 - Primary formula: Y = b*X + Zu + e 
   - Zu = design matrix and vector for random effects  
@@ -144,6 +147,7 @@ Overview of common statistical tests for group comparisons
   - Primarily visual diagnostics 
 
 🔵 **Generalized Linear Mixed Models (GLMM)** 🔵
+
 - Purpose: Extension of LMM to non-normal outcomes 
 - Primary formula: g(E[Y]) = b*X + Zu + e 
   - g() is the link function 

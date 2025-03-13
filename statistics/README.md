@@ -4,7 +4,8 @@
 Overview of common statistical tests for group comparisons
 
 **t-tests**  
-$${\color{blue}t-tests}$$
+**$${\color{blue}t-tests}$$**
+
 **Independent Samples t-test**
 - Purpose: Compare means between two independent groups 
 - Key features:  

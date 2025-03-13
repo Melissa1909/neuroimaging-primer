@@ -5,8 +5,12 @@ Overview of common statistical tests for group comparisons
 
 ![Group_comparisions](https://github.com/Melissa1909/neuroimaging-primer/blob/main/statistics/images/group-statistics.png)
 
-### 📊 t-tests
+### 📊 General Linear Models (GLM)
 
+- Purpose: Unified framework that includes t-tests, ANOVA, ANCOVA, and regression 
+- Primary formula: Y = b*X + e
+  
+###  t-tests
 🔵 **Independent Samples t-test**
 - Purpose: Compare means between two independent groups 
 - Key features:  
@@ -40,11 +44,6 @@ Overview of common statistical tests for group comparisons
 - Testing assumptions:  
   - Normality of differences: Shapiro-Wilk test, Q-Q plots 
   - Alternative if assumptions violated: Wilcoxon signed-rank test (non-parametric) 
-
-### 📊 General Linear Models (GLM)
-
-- Purpose: Unified framework that includes t-tests, ANOVA, ANCOVA, and regression 
-- Primary formula: Y = b*X + e 
 
 🔵 **One-way ANOVA** 
 - Purpose: Compare means across three or more independent groups 

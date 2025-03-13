@@ -1,0 +1,148 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 600">
+  <!-- Background -->
+  <rect width="900" height="600" fill="#f8f9fa"/>
+  
+  <!-- Title -->
+  <text x="450" y="40" font-family="Arial" font-size="24" font-weight="bold" text-anchor="middle">Statistical Tests for Group Comparisons</text>
+  
+  <!-- Main Branches -->
+  <!-- GLM Family -->
+  <rect x="250" y="60" width="200" height="50" rx="5" fill="#4285f4" stroke="#2965c9" stroke-width="2"/>
+  <text x="350" y="90" font-family="Arial" font-size="16" fill="white" text-anchor="middle">General Linear Model (GLM)</text>
+  <text x="350" y="110" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Y = Xβ + ε</text>
+  
+  <!-- Mixed Models -->
+  <rect x="650" y="60" width="200" height="50" rx="5" fill="#0f9d58" stroke="#0b7f46" stroke-width="2"/>
+  <text x="750" y="85" font-family="Arial" font-size="16" fill="white" text-anchor="middle">Linear Mixed Model (LMM)</text>
+  <text x="750" y="105" font-family="Arial" font-size="12" fill="white" text-anchor="middle">Y = Xβ + Zu + ε</text>
+  
+  <rect x="650" y="130" width="200" height="50" rx="5" fill="#673ab7" stroke="#532f94" stroke-width="2"/>
+  <text x="750" y="155" font-family="Arial" font-size="16" fill="white" text-anchor="middle">Generalized LMM (GLMM)</text>
+  <text x="750" y="175" font-family="Arial" font-size="12" fill="white" text-anchor="middle">g(E[Y]) = Xβ + Zu</text>
+  
+  <!-- GLM Subtypes -->
+  <!-- T-Tests -->
+  <rect x="75" y="160" width="150" height="40" rx="5" fill="#4285f4" fill-opacity="0.7" stroke="#2965c9" stroke-width="2"/>
+  <text x="150" y="185" font-family="Arial" font-size="16" text-anchor="middle">t-tests</text>
+  
+  <!-- ANOVA -->
+  <rect x="250" y="160" width="150" height="40" rx="5" fill="#4285f4" fill-opacity="0.7" stroke="#2965c9" stroke-width="2"/>
+  <text x="325" y="185" font-family="Arial" font-size="16" text-anchor="middle">ANOVA</text>
+  
+  <!-- ANCOVA -->
+  <rect x="425" y="160" width="150" height="40" rx="5" fill="#4285f4" fill-opacity="0.7" stroke="#2965c9" stroke-width="2"/>
+  <text x="500" y="185" font-family="Arial" font-size="16" text-anchor="middle">ANCOVA</text>
+  
+  <!-- T-Test Types -->
+  <rect x="25" y="230" width="120" height="50" rx="5" fill="#4285f4" fill-opacity="0.5" stroke="#2965c9" stroke-width="1"/>
+  <text x="85" y="255" font-family="Arial" font-size="14" text-anchor="middle">Independent</text>
+  <text x="85" y="273" font-family="Arial" font-size="14" text-anchor="middle">Samples</text>
+  
+  <rect x="155" y="230" width="120" height="50" rx="5" fill="#4285f4" fill-opacity="0.5" stroke="#2965c9" stroke-width="1"/>
+  <text x="215" y="255" font-family="Arial" font-size="14" text-anchor="middle">Paired</text>
+  <text x="215" y="273" font-family="Arial" font-size="14" text-anchor="middle">Samples</text>
+  
+  <!-- ANOVA Types -->
+  <rect x="175" y="300" width="120" height="50" rx="5" fill="#4285f4" fill-opacity="0.5" stroke="#2965c9" stroke-width="1"/>
+  <text x="235" y="325" font-family="Arial" font-size="14" text-anchor="middle">One-way</text>
+  <text x="235" y="343" font-family="Arial" font-size="14" text-anchor="middle">ANOVA</text>
+  
+  <rect x="305" y="300" width="120" height="50" rx="5" fill="#4285f4" fill-opacity="0.5" stroke="#2965c9" stroke-width="1"/>
+  <text x="365" y="325" font-family="Arial" font-size="14" text-anchor="middle">Repeated</text>
+  <text x="365" y="343" font-family="Arial" font-size="14" text-anchor="middle">Measures</text>
+  
+  <rect x="435" y="300" width="120" height="50" rx="5" fill="#4285f4" fill-opacity="0.5" stroke="#2965c9" stroke-width="1"/>
+  <text x="495" y="325" font-family="Arial" font-size="14" text-anchor="middle">Mixed</text>
+  <text x="495" y="343" font-family="Arial" font-size="14" text-anchor="middle">ANOVA</text>
+  
+  <!-- Connection Lines -->
+  <line x1="350" y1="110" x2="150" y2="160" stroke="#666" stroke-width="2" stroke-dasharray="5,3"/>
+  <line x1="350" y1="110" x2="325" y2="160" stroke="#666" stroke-width="2" stroke-dasharray="5,3"/>
+  <line x1="350" y1="110" x2="500" y2="160" stroke="#666" stroke-width="2" stroke-dasharray="5,3"/>
+  
+  <line x1="150" y1="200" x2="85" y2="230" stroke="#666" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="150" y1="200" x2="215" y2="230" stroke="#666" stroke-width="1.5" stroke-dasharray="5,3"/>
+  
+  <line x1="325" y1="200" x2="235" y2="300" stroke="#666" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="325" y1="200" x2="365" y2="300" stroke="#666" stroke-width="1.5" stroke-dasharray="5,3"/>
+  <line x1="325" y1="200" x2="495" y2="300" stroke="#666" stroke-width="1.5" stroke-dasharray="5,3"/>
+  
+  <!-- Transition arrow from GLM to Mixed Models -->
+  <path d="M 450 85 Q 550 85 650 85" fill="none" stroke="#666" stroke-width="2" stroke-dasharray="5,3"/>
+  <polygon points="645,80 650,85 645,90" fill="#666"/>
+  <text x="550" y="70" font-family="Arial" font-size="12" text-anchor="middle">Extension</text>
+  
+  <!-- Transition arrow from LMM to GLMM -->
+  <line x1="750" y1="110" x2="750" y2="130" stroke="#666" stroke-width="2" stroke-dasharray="5,3"/>
+  <polygon points="745,125 750,130 755,125" fill="#666"/>
+  
+  <!-- Key Features Table -->
+  <rect x="50" y="380" width="800" height="190" rx="5" fill="white" stroke="#ccc" stroke-width="2"/>
+  <text x="450" y="410" font-family="Arial" font-size="18" font-weight="bold" text-anchor="middle">Key Features Comparison</text>
+  
+  <!-- Table Header -->
+  <rect x="70" y="420" width="150" height="30" fill="#f1f3f4" stroke="#ccc" stroke-width="1"/>
+  <rect x="220" y="420" width="150" height="30" fill="#f1f3f4" stroke="#ccc" stroke-width="1"/>
+  <rect x="370" y="420" width="150" height="30" fill="#f1f3f4" stroke="#ccc" stroke-width="1"/>
+  <rect x="520" y="420" width="150" height="30" fill="#f1f3f4" stroke="#ccc" stroke-width="1"/>
+  <rect x="670" y="420" width="150" height="30" fill="#f1f3f4" stroke="#ccc" stroke-width="1"/>
+  
+  <text x="145" y="440" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Feature</text>
+  <text x="295" y="440" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">t-tests</text>
+  <text x="445" y="440" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">ANOVA</text>
+  <text x="595" y="440" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">Mixed ANOVA</text>
+  <text x="745" y="440" font-family="Arial" font-size="14" font-weight="bold" text-anchor="middle">LMM</text>
+  
+  <!-- Table Rows -->
+  <!-- Row 1 -->
+  <rect x="70" y="450" width="150" height="30" fill="white" stroke="#ccc" stroke-width="1"/>
+  <rect x="220" y="450" width="150" height="30" fill="white" stroke="#ccc" stroke-width="1"/>
+  <rect x="370" y="450" width="150" height="30" fill="white" stroke="#ccc" stroke-width="1"/>
+  <rect x="520" y="450" width="150" height="30" fill="white" stroke="#ccc" stroke-width="1"/>
+  <rect x="670" y="450" width="150" height="30" fill="white" stroke="#ccc" stroke-width="1"/>
+  
+  <text x="145" y="470" font-family="Arial" font-size="12" text-anchor="middle">Missing Data</text>
+  <text x="295" y="470" font-family="Arial" font-size="12" text-anchor="middle">❌ No</text>
+  <text x="445" y="470" font-family="Arial" font-size="12" text-anchor="middle">❌ No</text>
+  <text x="595" y="470" font-family="Arial" font-size="12" text-anchor="middle">❌ No</text>
+  <text x="745" y="470" font-family="Arial" font-size="12" text-anchor="middle">✓ Yes</text>
+  
+  <!-- Row 2 -->
+  <rect x="70" y="480" width="150" height="30" fill="white" stroke="#ccc" stroke-width="1"/>
+  <rect x="220" y="480" width="150" height="30" fill="white" stroke="#ccc" stroke-width="1"/>
+  <rect x="370" y="480" width="150" height="30" fill="white" stroke="#ccc" stroke-width="1"/>
+  <rect x="520" y="480" width="150" height="30" fill="white" stroke="#ccc" stroke-width="1"/>
+  <rect x="670" y="480" width="150" height="30" fill="white" stroke="#ccc" stroke-width="1"/>
+  
+  <text x="145" y="500" font-family="Arial" font-size="12" text-anchor="middle">Individual Trajectories</text>
+  <text x="295" y="500" font-family="Arial" font-size="12" text-anchor="middle">❌ No</text>
+  <text x="445" y="500" font-family="Arial" font-size="12" text-anchor="middle">❌ No</text>
+  <text x="595" y="500" font-family="Arial" font-size="12" text-anchor="middle">Partial</text>
+  <text x="745" y="500" font-family="Arial" font-size="12" text-anchor="middle">✓ Yes (random slopes)</text>
+  
+  <!-- Row 3 -->
+  <rect x="70" y="510" width="150" height="30" fill="white" stroke="#ccc" stroke-width="1"/>
+  <rect x="220" y="510" width="150" height="30" fill="white" stroke="#ccc" stroke-width="1"/>
+  <rect x="370" y="510" width="150" height="30" fill="white" stroke="#ccc" stroke-width="1"/>
+  <rect x="520" y="510" width="150" height="30" fill="white" stroke="#ccc" stroke-width="1"/>
+  <rect x="670" y="510" width="150" height="30" fill="white" stroke="#ccc" stroke-width="1"/>
+  
+  <text x="145" y="530" font-family="Arial" font-size="12" text-anchor="middle">Handles Unbalanced Data</text>
+  <text x="295" y="530" font-family="Arial" font-size="12" text-anchor="middle">Partial</text>
+  <text x="445" y="530" font-family="Arial" font-size="12" text-anchor="middle">Partial</text>
+  <text x="595" y="530" font-family="Arial" font-size="12" text-anchor="middle">❌ No</text>
+  <text x="745" y="530" font-family="Arial" font-size="12" text-anchor="middle">✓ Yes</text>
+  
+  <!-- Row 4 -->
+  <rect x="70" y="540" width="150" height="30" fill="white" stroke="#ccc" stroke-width="1"/>
+  <rect x="220" y="540" width="150" height="30" fill="white" stroke="#ccc" stroke-width="1"/>
+  <rect x="370" y="540" width="150" height="30" fill="white" stroke="#ccc" stroke-width="1"/>
+  <rect x="520" y="540" width="150" height="30" fill="white" stroke="#ccc" stroke-width="1"/>
+  <rect x="670" y="540" width="150" height="30" fill="white" stroke="#ccc" stroke-width="1"/>
+  
+  <text x="145" y="560" font-family="Arial" font-size="12" text-anchor="middle">Time-varying Covariates</text>
+  <text x="295" y="560" font-family="Arial" font-size="12" text-anchor="middle">❌ No</text>
+  <text x="445" y="560" font-family="Arial" font-size="12" text-anchor="middle">❌ No</text>
+  <text x="595" y="560" font-family="Arial" font-size="12" text-anchor="middle">❌ No</text>
+  <text x="745" y="560" font-family="Arial" font-size="12" text-anchor="middle">✓ Yes</text>
+</svg>

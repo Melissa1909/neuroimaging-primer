@@ -3,9 +3,9 @@
 ## Group comparisons
 Overview of common statistical tests for group comparisons
 
-🔵 **t-tests** 🔵
+📊 **t-tests**
 
-**Independent Samples t-test**
+🔵 **Independent Samples t-test**
 - Purpose: Compare means between two independent groups 
 - Key features:  
   - Simple to understand and communicate 
@@ -23,7 +23,7 @@ Overview of common statistical tests for group comparisons
   - Variance equality: Levene's test, F-test 
 - Alternative if assumptions violated: Welch's t-test (unequal variances), Mann-Whitney U test (non-parametric) 
  
-**Paired Samples t-test**
+🔵 **Paired Samples t-test**
 - Purpose: Compare means between two related measurements 
 - Key features:  
   - Accounts for within-subject correlation 
@@ -39,12 +39,12 @@ Overview of common statistical tests for group comparisons
   - Normality of differences: Shapiro-Wilk test, Q-Q plots 
   - Alternative if assumptions violated: Wilcoxon signed-rank test (non-parametric) 
 
-🔵 **General Linear Models (GLM)** 🔵
+📊**General Linear Models (GLM)**
 
 - Purpose: Unified framework that includes t-tests, ANOVA, ANCOVA, and regression 
 - Primary formula: Y = b*X + e 
 
-**One-way ANOVA** 
+🔵 **One-way ANOVA** 
 - Purpose: Compare means across three or more independent groups 
 - Key features:  
   - Extends t-test to multiple groups 
@@ -62,7 +62,7 @@ Overview of common statistical tests for group comparisons
   - Homogeneity: Levene's test, Bartlett's test 
 - Alternative if assumptions violated: Welch's ANOVA, Kruskal-Wallis test (non-parametric) 
 
-**Repeated Measures ANOVA** 
+🔵 **Repeated Measures ANOVA** 
 - Purpose: Compare means across three or more related measurements 
 - Key features:  
   - Accounts for within-subject correlation 
@@ -80,7 +80,7 @@ Overview of common statistical tests for group comparisons
 - Sphericity: Mauchly's test 
 - Alternative if assumptions violated: Greenhouse-Geisser or Huynh-Feldt corrections, Friedman test (non-parametric) 
 
-**Mixed ANOVA** 
+🔵 **Mixed ANOVA** 
 - Purpose: Analyze effects of both between-subjects and within-subjects factors 
 - Key features:  
   - Combines between-subject and within-subject factors 
@@ -98,7 +98,7 @@ Overview of common statistical tests for group comparisons
   - Combination of tests for one-way and repeated measures ANOVA 
   - Alternative if assumptions violated: Linear mixed models (LMM) 
 
-**ANCOVA (Analysis of Covariance)**
+🔵 **ANCOVA (Analysis of Covariance)**
 - Purpose: Compare means while controlling for covariates 
 - Key features:  
   - Controls for continuous covariates 
@@ -117,7 +117,7 @@ Overview of common statistical tests for group comparisons
   - Linearity: Scatterplots with regression lines 
   - Homogeneity of regression slopes: Testing interaction between group and covariate 
 
-🔵 **Linear Mixed Models (LMM)** 🔵
+📊 **Linear Mixed Models (LMM)** 
 
 - Purpose: Account for hierarchical, clustered, or longitudinal data 
 - Primary formula: Y = b*X + Zu + e 
@@ -146,7 +146,7 @@ Overview of common statistical tests for group comparisons
   - Residual plots, Q-Q plots for residuals and random effects 
   - Primarily visual diagnostics 
 
-🔵 **Generalized Linear Mixed Models (GLMM)** 🔵
+📊 **Generalized Linear Mixed Models (GLMM)**
 
 - Purpose: Extension of LMM to non-normal outcomes 
 - Primary formula: g(E[Y]) = b*X + Zu + e 

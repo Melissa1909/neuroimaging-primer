@@ -11,11 +11,19 @@ To get a glimpse into the disorder, I have collected some sources that demonstra
 
 
 ## 🧠 MRI findings in schizophrenia
-Although the dopamine system is highly implicated in positive symptoms of the disorder, it fails to explain all clinical features by far. Schizophrenia seems to have no neuroanatomical specificity and seems to be a disorder of neuronal (in particular synaptic) function. 
 - [Overview about the disorder](https://doi.org/10.1001/jamapsychiatry.2019.3360) 
+- [Neuroimaging in SCZ: an overview of findings and implications for synaptic change](https://doi.org/10.1038/s41386-022-01426-x) 
+
+Although the dopamine system is highly implicated in positive symptoms of the disorder, it fails to explain all clinical features by far. Schizophrenia seems to have no neuroanatomical specificity and seems to be a disorder of neuronal (in particular synaptic) function. 
 - [Schizophrenia and dopamine](https://doi.org/10.1016/j.tins.2018.12.004)
 - [Imaging the dopamine system of schizophrenia](https://doi.org/10.3389/fpsyt.2022.925476)
-- [Neuroimaging in SCZ: an overview of findings and implications for synaptic change](https://doi.org/10.1038/s41386-022-01426-x) 
+
+
+A central hypothesis in schizophrenia research is the dysconnectivity hypothesis. It posits that schizophrenia results from brain structural and functional connectivity abnormalities. For example, thalamic hyperconnectivity with sensory regions has been related to hallucinations and delusions [1](https://doi.org/10.1017/s003329171800003x), while hypoconnectivity with prefrontal regions has been associated with multiple symptom domains [2](https://doi.org/10.1017/s0033291722002793).
+- [Dysconnection in schizophrenia](https://doi.org/10.1093/schbul/sbn176)
+
+
+Another important concept is the neurodevelopmental hypothesis of schizophrenia, which suggests that the disorder is caused by a combination of genetic and environmental factors that disrupt normal brain development.
 - [Rethinking schizophrenia as a neurodevelopmental disorder](https://doi.org/10.1038/nature09552) 
 
 

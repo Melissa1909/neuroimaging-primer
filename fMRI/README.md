@@ -41,7 +41,6 @@ Neurovascular coupling refers to the process by which a brief increase in local 
 | 5. BOLD signal generation | Less paramagnetic deoxyhemoglobin → slower T₂* decay of MR signal after RF pulse. | Increased MRI signal in active regions |
 
 ## 🧘‍♀️ Task vs. resting-state fMRI and its associated outcomes
-# 🧠 Task-based vs. Resting-State fMRI
 
 Functional Magnetic Resonance Imaging (fMRI) can be used in two major ways: *Task-based fMRI* and *Resting-state fMRI*. Both measure brain activity via the BOLD (Blood Oxygen Level Dependent) signal but differ in design, purpose, and analysis.
 

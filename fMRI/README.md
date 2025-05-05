@@ -1,4 +1,4 @@
-# functional MRI - the brain in action or at rest 🧩🧘‍♀️
+# Functional MRI - the brain in action or at rest 🧩🧘‍♀️
 
 
 How the brain works has long been a mystery (and still is to some extent...), and people have been trying to understand brain function for a long time. Early lesion examples (such as [Phineas Gage's accident](https://en.wikipedia.org/wiki/Phineas_Gage)) have already shown that the brain has region-specific functionality. Today, we measure brain function either as electromagnetic fields (e.g. EEG) or via the metabolism and energy consumption of cells (e.g. PET, fMRI). 
@@ -26,26 +26,99 @@ The **hemodynamic response function (HRF)** describes the BOLD signal with respe
 
 
 ## 🫀 Why do vessels dilate? - the neurovascular unit
-## 📐 Outcome measures of fMRI
-## 🧘‍♀️ Task vs. resting-state fMRI
+Neurovascular coupling (NVC): the link between neurons and blood flow
+Neurovascular coupling refers to the process by which a brief increase in local neuronal activity leads to a subsequent, spatially matched increase in cerebral blood flow (CBF) and volume (CBV) to meet the heightened metabolic needs of active brain tissue 
+- This phenomenon underlies the blood‑oxygen‑level‑dependent (BOLD) contrast exploited by fMRI.
+
+## Step-by-Step Neurovascular Coupling
+
+| Step | Cellular Events | Vascular Outcome |
+|------|------------------|------------------|
+| 1. Neuronal activation | Synaptic activity releases glutamate; Na⁺/K⁺‑ATPases consume ATP to restore ion gradients. | – |
+| 2. Astrocyte signaling | Astrocytes sense glutamate via metabotropic receptors → ↑ intracellular Ca²⁺ → release of vasoactive mediators (e.g., prostaglandin E₂, epoxyeicosatrienoic acids). | – |
+| 3. Direct neuronal vasomotor action | Neurons generate nitric oxide (NO) and prostaglandins that relax vascular smooth muscle. | Arteriole and capillary dilation |
+| 4. Increased CBF/CBV | More oxygen-rich blood is delivered than is consumed. | Local blood volume ↑; deoxyhemoglobin fraction ↓ |
+| 5. BOLD signal generation | Less paramagnetic deoxyhemoglobin → slower T₂* decay of MR signal after RF pulse. | Increased MRI signal in active regions |
+
+## 🧘‍♀️ Task vs. resting-state fMRI and its associated outcomes
+# 🧠 Task-based vs. Resting-State fMRI
+
+Functional Magnetic Resonance Imaging (fMRI) can be used in two major ways: *Task-based fMRI* and *Resting-state fMRI*. Both measure brain activity via the BOLD (Blood Oxygen Level Dependent) signal but differ in design, purpose, and analysis.
+
+---
+
+## 🎯 Task-Based fMRI
+
+### ❓ What is it?  
+Task-based fMRI measures brain activity *in response to specific tasks or stimuli*. Participants perform a designed task (e.g., visual stimulation, finger tapping), and changes in brain activation are analyzed. This is the historical origin of fmri Signal, see also [here](10.1002/mrm.1910340409)
+
+### 🔬 Method:
+- Uses an *experimental paradigm* (block or event-related).
+- BOLD signals are modeled with a *General Linear Model (GLM)*.
+- Produces *activation maps* showing task-related activity.
+    - See Figure 1c from this publication [here](https://doi.org/10.1371/journal.pbio.3002035)
+
+### ✅ Pros:
+- Directly links brain areas to specific cognitive functions.
+- High spatial specificity.
+
+### ⚠️ Cons:
+- Requires subject cooperation and task performance.
+- Task design must be carefully controlled.
+
+---
+
+## 💤 Resting-State fMRI
+
+### ❓ What is it?  
+Resting-state fMRI measures *spontaneous brain activity* when the subject is *not performing any task*—typically lying still with eyes open or closed.
+
+### 🔬 Method:
+- No external task; continuous passive recording.
+- Focus on *functional connectivity*: correlated BOLD signal fluctuations between regions.
+    - functional connectivity is mainly [described](https://doi.org/10.1002/hbm.460020107) as the "statistical association or dependency among two or more anatomically distinct timeseries".
+- Analysis methods include mainly *seed-based correlation*.
+
+### ✅ Pros:
+- Minimal demands on participants.
+- Suitable for infants, elderly, or clinical populations.
+- Reveals *intrinsic functional networks* (e.g., default mode network).
+
+### ⚠️ Cons:
+- No direct link to behavior or function.
+- More susceptible to motion and physiological noise.
+- Interpretation can be more ambiguous.
+
+---
+
+## 🔍 Key Differences
+
+| Feature              | Task-Based fMRI                          | Resting-State fMRI                         |
+|---------------------|-------------------------------------------|--------------------------------------------|
+| *Purpose*          | Map brain activity during tasks           | Assess intrinsic connectivity               |
+| *Subject activity* | Performs specific task                    | Rests quietly                               |
+| *Analysis type*    | Activation mapping (GLM)                  | Correlation / network analysis              |
+| *Design*           | Block or event-related                    | No explicit design                          |
+| *Applications*     | Functional localization, cognitive tasks  | Brain networks, developmental or clinical studies |
+| *Limitations*      | Needs good task performance               | More difficult to interpret causally        |
+
+---
+
+## 🧪 Summary
+
+- *Task-based fMRI*: Best for hypothesis-driven research; maps specific functions to brain areas.
+- *Resting-state fMRI*: Ideal for network-level studies and populations unable to perform tasks.
+
+Both approaches are complementary and often used together in neuroscience research.
+
 ## 💧 fMRI signal from non-neural sources - CSF and parenchymal borders
 Functional MRI (especially **BOLD fMRI**) relies on detecting changes in the magnetic properties of deoxygenated hemoglobin — specifically the T2* (transverse relaxation) signal from hydrogen nuclei in water. In gray matter, these BOLD signal changes are linked to neural activity via neurovascular coupling.
 
 However, structures other than gray matter are visible in an fMRI image. In our case, we are interested in the behaviour of Cerebrospinal Fluid (CSF) and the motion of the brain's ventricular system. 
 
-CSF is mostly water (~99%), with very low cellular content and no hemoglobin. So, CSF does not produce a BOLD signal in the traditional neurovascular sense. However, CSF does have an fMRI signal that can vary, and here's where it comes from:
+CSF is mostly water (~99%), with very low cellular content and no hemoglobin. So, CSF does not produce a BOLD signal in the traditional neurovascular sense. However, CSF does have an fMRI signal that can vary, and here's why we can even measure it:
 
-✅ Physical sources of CSF fMRI signal:
-
-1. Bulk motion of CSF (due to cardiac and respiratory pulsations)
-- These motions cause phase shifts and signal fluctuations, especially near the ventricles and cisterns.
-- These fluctuations can be periodic and strong, contaminating surrounding BOLD signals.
-
-2. Flow-related effects
-- Flow of CSF modulates spin dephasing, causing T2* signal fluctuations, especially in gradient-echo EPI.
-- Especially when you place your region of interest (ROI) directly on the edge of the imaging volume, for example by looking at the fourth ventricle, fresh CSF will enter the brain periodically in response to small changes in cerebral blood volume (CBV), causing an inflow effect and thus visible up- and downward movement of CSF.
-- The model explaining why changes in CBV cause antiproportional movement of CSF (so-called gGM-CSF-coupling) is called the Monro-Kellie-Doctrine
-    - # The Monroe–Kellie Doctrine
+# The Monroe–Kellie Doctrine
 
 The Monroe–Kellie doctrine describes how the rigid skull confines three main intracranial compartments—brain tissue, blood, and cerebrospinal fluid (CSF)—and states that the total volume inside the cranium must remain constant. Any increase in one compartment must be offset by a decrease in one or both of the others, or intracranial pressure (ICP) will rise.
 
@@ -68,14 +141,32 @@ The Monroe–Kellie doctrine describes how the rigid skull confines three main i
 
 Since the volume inside the skull is fixed, a change in the volume of one of these compartments must be compensated by a decrease in the volume of the other two compartments, otherwise, intracranial pressure (ICP) will increase. 
 
-This principle is crucial for understanding how conditions like brain edema, hemorrhages, or tumors can lead to raised ICP.
+
+✅ Drivers of CSF flow:
+
+Macroscopic CSF flow happens because of three physiological processes
+- Heartbeat
+- Respiration
+- Neuronal activity (see neurovascular coupling above)
+
+✅ Methods to analyze CSF flow:
+
+1. Flow-related effects at the bottom slice of the magnetic field of the fMRI
+- Flow of CSF modulates spin dephasing, causing T2* signal fluctuations, especially in gradient-echo EPI.
+- Especially when you place your region of interest (ROI) directly on the edge of the imaging volume, for example by looking at the fourth ventricle, fresh CSF will enter the brain periodically in response to small changes in cerebral blood volume (CBV), causing an inflow effect and thus visible up- and downward movement of CSF.
+    - This happens because fresh fluid that hasn't been magnetized yet shows high signal intensity, when reaching the magnetic field for the first time. (Check supplementary information from this publication [here](10.1126/science.aax5440) to understand this effect)
+    - This effect can be used to assess whether there is in- our outflow of CSF in the fourth ventricle or basal cistern
+- As this CSF flow is antiproportional to the signal in gray matter (GM activity -> rise in CBV due to neurovascular coupling -> CSF outflow), we refer to this as GM-CSF-coupling.
 
 - The coupling between gray matter and CSF has been explored in various studies, including: [Fultz2019](10.1126/science.aax5440), [Han2021](https://doi.org/10.1371/journal.pbio.3001233) or [Zimmermann2025](10.1097/ALN.0000000000005360)
 - It is of particular interest in the CSF-community, as this value has been linked to numerous neurodegenerative diseases such as Alzheimers.
 
-3. Partial volume effects
-- Some voxels labeled as “CSF” contain small amounts of nearby parenchyma or blood vessels.
-- If you then place a ROI directly on the edge of lateral ventricles, you'll encounter what's called a partial volume effect, meaning that the ratio of CSF and parenchyma in the respective voxel will decide on the signal intensity of the observed voxel. Our group is particularly in the fMRI-based volume-sensitive measurement of ventricular motion, which you can read up [here](https://doi.org/10.1371/journal.pbio.3003138) in detail.
+2. Partial volume effects
+- Some voxels at the border of parenchyma and ventricular system contain amounts of parenchyma and CSF.
+- If a ROI is then placed directly on those voxels (e.g. at the edge of lateral ventricles), you'll encounter what's called a partial volume effect.
+- This means that the ratio between CSF and parenchyma in the respective voxel will decide on the signal intensity of the observed voxel.
+- We used this idea of the partial volume effect induced intensity changes at the edge of lateral ventricles to observe its motion as a respond to neural activity in fMRI
+- Our group is particularly interested in the fMRI-based measurement of ventricular motion, which you can read up [here](https://doi.org/10.1371/journal.pbio.3003138) in detail.
 
 ## 🛠️ Preprocessing steps
 
@@ -144,6 +235,7 @@ Even small translations or rotations can introduce spurious signal changes that 
 - 📉 Nuisance regression: Include motion parameters (and their derivatives) in the GLM to reduce motion-related variance
 - ✂️ Scrubbing ("frame censoring"): Identify and remove volumes with excessive motion  
   - e.g., framewise displacement > 0.5 mm or rotation > 0.5°
+  - We typically do something called "Contiguous low-motion segment (“epoch”) selection", which is applying the idea of scrubbing and searching for the longest timeframe below a previously defined motion cutoff
 - 📈 Quality control:
   - Plot motion traces
   - Compute summary metrics (e.g., framewise displacement)
@@ -421,7 +513,6 @@ A cleaned version of the fMRI data in which:
 
 There are also other steps, such as volume censoring or physiological noise regression. 
 
-## 🤷‍♀️ Problems in fMRI
 
 
 

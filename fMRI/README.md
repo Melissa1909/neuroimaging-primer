@@ -150,7 +150,7 @@ Macroscopic CSF flow happens because of three physiological processes
 
 ✅ Methods to analyze CSF flow:
 
-1. Flow-related effects at the bottom slice of the magnetic field of the fMRI
+1. **Flow-related effects** at the bottom slice of the magnetic field of the fMRI
 - Flow of CSF modulates spin dephasing, causing T2* signal fluctuations, especially in gradient-echo EPI.
 - Especially when you place your region of interest (ROI) directly on the edge of the imaging volume, for example by looking at the fourth ventricle, fresh CSF will enter the brain periodically in response to small changes in cerebral blood volume (CBV), causing an inflow effect and thus visible up- and downward movement of CSF.
     - This happens because fresh fluid that hasn't been magnetized yet shows high signal intensity, when reaching the magnetic field for the first time. (Check supplementary information from this publication [here](10.1126/science.aax5440) to understand this effect)
@@ -160,7 +160,7 @@ Macroscopic CSF flow happens because of three physiological processes
 - The coupling between gray matter and CSF has been explored in various studies, including: [Fultz2019](10.1126/science.aax5440), [Han2021](https://doi.org/10.1371/journal.pbio.3001233) or [Zimmermann2025](10.1097/ALN.0000000000005360)
 - It is of particular interest in the CSF-community, as this value has been linked to numerous neurodegenerative diseases such as Alzheimers.
 
-2. Partial volume effects
+2. **Partial volume effects**
 - Some voxels at the border of parenchyma and ventricular system contain amounts of parenchyma and CSF.
 - If a ROI is then placed directly on those voxels (e.g. at the edge of lateral ventricles), you'll encounter what's called a partial volume effect.
 - This means that the ratio between CSF and parenchyma in the respective voxel will decide on the signal intensity of the observed voxel.
@@ -184,14 +184,14 @@ That's why in resting-state, but also in task-based fMRI, you will send your dat
 
 Overview of different preprocessing steps
 **Conventional steps**
-1. **Slice timing**
+### 1. **Slice timing**
 - Slice‐timing correction (STC) is a standard fMRI preprocessing step that realigns the time series of all slices in each volume to a common reference time‑point. Because most fMRI scanners acquire a 3D volume not all at once but slice by slice over the repetition time (TR), each slice actually samples the brain at a slightly different moment. STC shifts each slice’s time series via interpolation so that every voxel appears as if it were measured simultaneously—crucial when your experimental design has rapid or event‑related timing.
 **Why slice timing matters**
 - Temporal misalignment: If slice 1 is acquired at time 0 ms and slice 20 at 1,000 ms (for a TR of 2 s and 20 slices), then a neural event at 500 ms will appear at different relative phases in different slices.
 - Statistical sensitivity: Uncorrected offsets smear the estimated hemodynamic response across time, reducing power and inducing bias in model estimates 
 - Event‑related designs: When stimuli are brief or jittered, even small slice‑time differences (<100 ms) can distort the shape and timing of the inferred response.
 
-**Core steps of STC**
+    **Core steps of STC**
 - Specify slice order & reference
 Ascending (1→N), descending (N→1) or interleaved (odd→even) acquisition 
 Choose a reference slice (often the middle slice or first slice) whose time‑point all others will be realigned to.
@@ -203,13 +203,13 @@ Brain Innovation
 All slices now share a common temporal grid, ready for motion correction, normalization and statistical modeling.
 
 
-2. **Motion correction**
+### 2. **Motion correction**
 - Motion correction is a key preprocessing step in fMRI analysis that compensates for the participant’s head movements during the scan.  
 Even small translations or rotations can introduce spurious signal changes that mimic or obscure true neural activity.
 
 ---
 
-### 1. The Problem: Head Motion Artifacts
+# 2.1 The Problem: Head Motion Artifacts
 
 - 🌀 Within-scan movement: Even sub-millimeter shifts or tiny rotations during the scan can distort results.
 - ⚠️ Artifacts introduced:
@@ -219,7 +219,7 @@ Even small translations or rotations can introduce spurious signal changes that 
 
 ---
 
-### 2. Core Steps of Motion Correction
+# 2.2 Core Steps of Motion Correction
 
 | Step                      | Description                                                                 |
 |---------------------------|-----------------------------------------------------------------------------|
@@ -229,7 +229,7 @@ Even small translations or rotations can introduce spurious signal changes that 
 
 ---
 
-### 3. Motion Parameter Use
+# 2.3 Motion Parameter Use
 
 - 📉 Nuisance regression: Include motion parameters (and their derivatives) in the GLM to reduce motion-related variance
 - ✂️ Scrubbing ("frame censoring"): Identify and remove volumes with excessive motion  
@@ -240,18 +240,8 @@ Even small translations or rotations can introduce spurious signal changes that 
   - Compute summary metrics (e.g., framewise displacement)
   - Decide whether to exclude high-motion runs
 
----
 
-### 4. Practical Notes
-
-| Aspect               | Recommendation                                                                    |
-|----------------------|-------------------------------------------------------------------------------------|
-| Order in pipeline    | After slice-time correction; before normalization and smoothing                    |
-| High-motion subjects | Consider ICA-AROMA, wavelet despiking, or motion-informed ICA                      |
-
-
-
-3. **Registration**
+### 3. **Registration**
 - # Coregistration vs. Normalization in fMRI Preprocessing
 
 When you preprocess fMRI data, you perform a series of spatial-alignment steps to ensure that:
@@ -263,7 +253,7 @@ The two key steps are: coregistration and normalization.
 
 ---
 
-## 1. Coregistration
+# 3.1 Coregistration
 
 🎯 **Goal:**  
 Align each subject’s functional timeseries to their high-resolution structural (T₁) image.
@@ -285,7 +275,7 @@ A functional 4D series that “sits” in the same voxel grid as the structural 
 
 ---
 
-## 2. Normalization
+# 3.2 Normalization
 
 🎯 **Goal:**  
 Warp each subject’s structural scan — and by extension, their coregistered functional scans — into a standard template (e.g., MNI, Talairach).
@@ -306,7 +296,7 @@ Functional data in template space, enabling group-level statistics and reporting
 
 ---
 
-## 3. Key Differences
+# 3.3 Key Differences
 
 | Feature         | Coregistration                         | Normalization                                     |
 |----------------|----------------------------------------|--------------------------------------------------|
@@ -317,7 +307,7 @@ Functional data in template space, enabling group-level statistics and reporting
 | Interpolation   | One resampling of functional series    | Additional resampling into template space        |
 
 ---
-4. **Temporal Filtering**
+### 4. **Temporal Filtering**
 Temporal filtering is a crucial step in fMRI preprocessing that improves the quality of your signal by removing unwanted frequencies from the time series at each voxel.
 
 ---
@@ -380,7 +370,7 @@ A cleaned version of the fMRI time series at each voxel, containing only the fre
 - Avoid filtering out the frequency components of your task (especially in block designs with slow alternations).
 
 
-5. Spatial smoothing
+### 5. Spatial smoothing
 # Spatial Smoothing in fMRI Preprocessing
 
 Spatial smoothing is a key preprocessing step in fMRI that slightly blurs the functional images to improve signal detection and enable group-level statistical analysis.
@@ -442,7 +432,7 @@ A smoothed 4D fMRI dataset where:
 Choose a smoothing kernel appropriate for your voxel size and expected activation size.  
 E.g., if voxel size = 2×2×2 mm³, a kernel of 6–8 mm FWHM is common.
 
-**Extra noise reduction steps (!)**
+## **Extra noise reduction steps (!)**
 1. ICA-based clean-up
 - This is a semi-automatic noise labelling method. In our group we use [ICA-AROMA](https://github.com/maartenmennes/ICA-AROMA)
 

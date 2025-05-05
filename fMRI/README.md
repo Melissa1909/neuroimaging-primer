@@ -44,8 +44,33 @@ CSF is mostly water (~99%), with very low cellular content and no hemoglobin. So
 2. Flow-related effects
 - Flow of CSF modulates spin dephasing, causing T2* signal fluctuations, especially in gradient-echo EPI.
 - Especially when you place your region of interest (ROI) directly on the edge of the imaging volume, for example by looking at the fourth ventricle, fresh CSF will enter the brain periodically in response to small changes in cerebral blood volume (CBV), causing an inflow effect and thus visible up- and downward movement of CSF.
-- If you want to know why changes in CBV cause antiproportional movement of CSF (so-called gGM-CSF-coupling), you can read about the Monro-Kellie-Doctrine [here]()
-- The coupling between gray matter and CSF has been explored in various studies, including:
+- The model explaining why changes in CBV cause antiproportional movement of CSF (so-called gGM-CSF-coupling) is called the Monro-Kellie-Doctrine
+    - # The Monroe–Kellie Doctrine
+
+The Monroe–Kellie doctrine describes how the rigid skull confines three main intracranial compartments—brain tissue, blood, and cerebrospinal fluid (CSF)—and states that the total volume inside the cranium must remain constant. Any increase in one compartment must be offset by a decrease in one or both of the others, or intracranial pressure (ICP) will rise.
+
+---
+
+## Components
+
+1. **Brain Parenchyma** (~80% of intracranial volume)
+   - This refers to the brain tissue, including neurons and glial cells.
+
+2. **Blood** (~10% of intracranial volume)
+   - Blood is composed of both arterial and venous blood within the brain.
+
+3. **Cerebrospinal Fluid (CSF)** (~10% of intracranial volume)
+   - CSF is found in the ventricles and the subarachnoid space surrounding the brain and spinal cord.
+
+---
+
+## Key Principle
+
+Since the volume inside the skull is fixed, a change in the volume of one of these compartments must be compensated by a decrease in the volume of the other two compartments, otherwise, intracranial pressure (ICP) will increase. 
+
+This principle is crucial for understanding how conditions like brain edema, hemorrhages, or tumors can lead to raised ICP.
+
+- The coupling between gray matter and CSF has been explored in various studies, including: [Fultz2019](10.1126/science.aax5440), [Han2021](https://doi.org/10.1371/journal.pbio.3001233) or [Zimmermann2025](10.1097/ALN.0000000000005360)
 - It is of particular interest in the CSF-community, as this value has been linked to numerous neurodegenerative diseases such as Alzheimers.
 
 3. Partial volume effects
@@ -69,22 +94,330 @@ That's why in resting-state, but also in task-based fMRI, you will send your dat
 
 Overview of different preprocessing steps
 **Conventional steps**
-1. Motion correction
-- xxx
-2. Slice timing
-- xxx
-3. Temporal filtering
-- xxx
-4. Registration
-- xxx
+1. **Slice timing**
+- Slice‐timing correction (STC) is a standard fMRI preprocessing step that realigns the time series of all slices in each volume to a common reference time‑point. Because most fMRI scanners acquire a 3D volume not all at once but slice by slice over the repetition time (TR), each slice actually samples the brain at a slightly different moment. STC shifts each slice’s time series via interpolation so that every voxel appears as if it were measured simultaneously—crucial when your experimental design has rapid or event‑related timing.
+**Why slice timing matters**
+- Temporal misalignment: If slice 1 is acquired at time 0 ms and slice 20 at 1,000 ms (for a TR of 2 s and 20 slices), then a neural event at 500 ms will appear at different relative phases in different slices.
+- Statistical sensitivity: Uncorrected offsets smear the estimated hemodynamic response across time, reducing power and inducing bias in model estimates 
+- Event‑related designs: When stimuli are brief or jittered, even small slice‑time differences (<100 ms) can distort the shape and timing of the inferred response.
+
+**Core steps of STC**
+- Specify slice order & reference
+Ascending (1→N), descending (N→1) or interleaved (odd→even) acquisition 
+Choose a reference slice (often the middle slice or first slice) whose time‑point all others will be realigned to.
+- Interpolate time series
+For each voxel, reconstruct a continuous time curve (e.g. via sinc or spline interpolation).
+Sample that curve at the reference time for each volume, effectively “shifting” each slice’s data in time 
+Brain Innovation
+-Output corrected 4D series
+All slices now share a common temporal grid, ready for motion correction, normalization and statistical modeling.
+
+
+2. **Motion correction**
+- Motion correction is a key preprocessing step in fMRI analysis that compensates for the participant’s head movements during the scan.  
+Even small translations or rotations can introduce spurious signal changes that mimic or obscure true neural activity.
+
+---
+
+### 1. The Problem: Head Motion Artifacts
+
+- 🌀 Within-scan movement: Even sub-millimeter shifts or tiny rotations during the scan can distort results.
+- ⚠️ Artifacts introduced:
+  - Voxels sample different tissue over time → false signal fluctuations
+  - Spin-history effects → signal intensity changes due to slice excitation history
+  - Motion-task correlation → movements may correlate with task timing (e.g., button presses)
+
+---
+
+### 2. Core Steps of Motion Correction
+
+| Step                      | Description                                                                 |
+|---------------------------|-----------------------------------------------------------------------------|
+| 1. Reference volume       | Select one volume (often one of the middle timepoints of the whole fMRI image) as the alignment target     |
+| 2. Rigid-body registration| Estimate 6 motion parameters (x, y, z + pitch, roll, yaw) for each volume   |
+| 3. Resampling             | Apply inverse transforms with interpolation (e.g. trilinear or sinc)        |
+
+---
+
+### 3. Motion Parameter Use
+
+- 📉 Nuisance regression: Include motion parameters (and their derivatives) in the GLM to reduce motion-related variance
+- ✂️ Scrubbing ("frame censoring"): Identify and remove volumes with excessive motion  
+  - e.g., framewise displacement > 0.5 mm or rotation > 0.5°
+- 📈 Quality control:
+  - Plot motion traces
+  - Compute summary metrics (e.g., framewise displacement)
+  - Decide whether to exclude high-motion runs
+
+---
+
+### 4. Practical Notes
+
+| Aspect               | Recommendation                                                                    |
+|----------------------|-------------------------------------------------------------------------------------|
+| Order in pipeline    | After slice-time correction; before normalization and smoothing                    |
+| High-motion subjects | Consider ICA-AROMA, wavelet despiking, or motion-informed ICA                      |
+
+
+
+3. **Registration**
+- # Coregistration vs. Normalization in fMRI Preprocessing
+
+When you preprocess fMRI data, you perform a series of spatial-alignment steps to ensure that:
+
+1. Each subject’s functional scans line up with their own anatomy.
+2. All subjects’ brains live in the same “standard” space.
+
+The two key steps are: coregistration and normalization.
+
+---
+
+## 1. Coregistration
+
+🎯 **Goal:**  
+Align each subject’s functional timeseries to their high-resolution structural (T₁) image.
+
+🔍 **Why?**  
+Functional images have lower resolution and different contrast than anatomical scans, so you need to know exactly where activation lies relative to gyri and sulci.
+
+🧭 **What transforms?**  
+Rigid-body transform (6 degrees of freedom: 3 translations, 3 rotations)
+
+🛠️ **How?**  
+- Choose a reference image (usually the subject’s mean fMRI volume).  
+- Optimize the rigid-body parameters to maximize similarity (e.g., mutual information) between fMRI and T₁.  
+- Resample the fMRI volumes into the anatomical space.
+- We typically do this with FSL "flirt" command
+
+📤 **Output:**  
+A functional 4D series that “sits” in the same voxel grid as the structural image — allowing overlay of activation maps on anatomy.
+
+---
+
+## 2. Normalization
+
+🎯 **Goal:**  
+Warp each subject’s structural scan — and by extension, their coregistered functional scans — into a standard template (e.g., MNI, Talairach).
+
+🔍 **Why?**  
+To compare or average results across subjects, everyone’s brain must be in a common coordinate system.
+
+🧭 **What transforms?**  
+Nonlinear (and possibly affine) deformations: stretching, squeezing, and bending to match the individual’s anatomy to the template.
+
+🛠️ **How?**  
+- Estimate deformation fields that minimize anatomical differences between the subject’s T₁ and the template.  
+- Apply those same deformations to the coregistered fMRI data.
+- We typically do this with FSL "fnirt" command
+
+📤 **Output:**  
+Functional data in template space, enabling group-level statistics and reporting of coordinates in a standard atlas.
+
+---
+
+## 3. Key Differences
+
+| Feature         | Coregistration                         | Normalization                                     |
+|----------------|----------------------------------------|--------------------------------------------------|
+| Scope           | Within-subject alignment               | Between-subject (to atlas) alignment             |
+| Image types     | Functional ↔ Structural (fMRI to T₁)     | Structural (and fMRI) to standard template        |
+| Transform       | Rigid-body (6 DOF)                     | Affine + Nonlinear deformations (many DOF)       |
+| Purpose         | Accurate overlay on anatomy            | Enable group analyses & coordinate reporting     |
+| Interpolation   | One resampling of functional series    | Additional resampling into template space        |
+
+---
+4. **Temporal Filtering**
+Temporal filtering is a crucial step in fMRI preprocessing that improves the quality of your signal by removing unwanted frequencies from the time series at each voxel.
+
+---
+
+## 🎯 Goal
+
+Remove slow drifts and high-frequency noise from the fMRI signal that are unlikely to reflect true neural activity.
+
+---
+
+## 🔍 Why Is Temporal Filtering Important?
+
+The raw BOLD (Blood-Oxygen-Level Dependent) signal contains fluctuations from multiple sources:
+
+- ✅ Task-related or spontaneous neural activity (the signal of interest)
+- ❌ Slow scanner drifts (very low frequency)
+- ❌ Physiological noise like heartbeat and breathing (high frequency)
+- ❌ Motion-related artifacts
+
+These noise sources can obscure the actual signal. Filtering improves the signal-to-noise ratio and makes the statistical analysis more reliable.
+
+---
+
+## ⚙️ How It Works
+
+Temporal filtering typically uses a band-pass or high-pass filter applied to the voxel-wise time series:
+
+- 🟢 **High-pass filter** (e.g., 0.01 Hz) -> This means letting all high frequencies through:  
+  Removes very slow fluctuations (like scanner drift).  
+  → Keeps only faster fluctuations that may reflect neural processes.
+
+- 🔵 **Low-pass filter** (e.g., 0.1–0.25 Hz) -> This means letting all low frequencies through:  
+  Removes fast fluctuations (like heartbeat, typically around 1 Hz).  
+  → Often used in resting-state fMRI to isolate slow neural rhythms.
+
+- 🟠 **Band-pass filter** (e.g., 0.01–0.1 Hz) -> This means letting a certain frequency band through:  
+  Combines both, retaining the frequency band most associated with meaningful BOLD signals.
+
+🧪 Example:  
+A high-pass filter at 0.01 Hz removes signal drifts slower than 100 seconds.
+
+Filtering is typically applied after slice timing and motion correction but before statistical modeling.
+
+---
+
+## 📤 Output
+
+A cleaned version of the fMRI time series at each voxel, containing only the frequency range of interest.
+
+- Reduced low- and high-frequency noise
+- Increased sensitivity to real task effects or connectivity patterns
+
+---
+
+## ⚠️ Considerations
+
+- The choice of cutoff frequencies depends on:
+  - The repetition time (TR)
+  - The duration of the scan
+- Avoid filtering out the frequency components of your task (especially in block designs with slow alternations).
+
+
 5. Spatial smoothing
-- xxx
+# Spatial Smoothing in fMRI Preprocessing
+
+Spatial smoothing is a key preprocessing step in fMRI that slightly blurs the functional images to improve signal detection and enable group-level statistical analysis.
+
+---
+
+## 🎯 Goal
+
+Increase the signal-to-noise ratio and account for anatomical variability by averaging signals from neighboring voxels.
+
+---
+
+## 🔍 Why Is Spatial Smoothing Important?
+
+The BOLD signal at each voxel is inherently noisy, and neighboring brain areas often share functionally similar signals. Spatial smoothing helps:
+
+- ✅ Improve detection of true neural activity by reducing random noise
+- ✅ Compensate for inter-subject anatomical differences (gyri/sulci misalignments)
+- ✅ Satisfy statistical assumptions for methods like Gaussian Random Field theory
+
+It also helps ensure that small misregistrations across participants don’t drastically affect group results.
+
+---
+
+## ⚙️ How It Works
+
+Spatial smoothing involves convolving the 3D fMRI data with a Gaussian kernel. This means that each voxel's value is replaced by a weighted average of its neighbors.
+
+- 🟢 Gaussian kernel: Defined by its Full Width at Half Maximum (FWHM), typically 4–8 mm.
+  - FWHM = the width of the Gaussian at half of its maximum height
+  - Example: A 6 mm FWHM kernel smooths over ~2–3 voxel radii
+
+- 🔄 Convolution is applied independently at each time point (i.e., spatial-only smoothing, not temporal).
+
+🧪 Example:  
+A 6 mm FWHM kernel spreads the signal from one voxel across its neighbors in a bell-shaped manner, reducing noise and making nearby activations more similar.
+
+---
+
+## 📤 Output
+
+A smoothed 4D fMRI dataset where:
+
+- The signal is more continuous across space
+- Small or isolated noisy fluctuations are reduced
+- Activation clusters are more spatially coherent
+
+---
+
+## ⚠️ Considerations
+
+- Too little smoothing:
+  - May miss activation if the signal is noisy
+- Too much smoothing:
+  - Can blur activation across functional boundaries (e.g., across sulci)
+  - May reduce spatial specificity
+
+🧠 Tip:  
+Choose a smoothing kernel appropriate for your voxel size and expected activation size.  
+E.g., if voxel size = 2×2×2 mm³, a kernel of 6–8 mm FWHM is common.
 
 **Extra noise reduction steps (!)**
 1. ICA-based clean-up
-- This is a semi-automatic noise labelling method
+- This is a semi-automatic noise labelling method. In our group we use [ICA-AROMA](https://github.com/maartenmennes/ICA-AROMA)
 
+Independent Component Analysis (ICA)–based AROMA is a data-driven method for automatically identifying and removing motion-related noise from fMRI data, especially useful in resting-state fMRI and studies involving subjects with high head motion.
 
+---
+
+## 🎯 Goal
+
+Identify and remove structured noise—particularly head motion artifacts—from fMRI data using independent component analysis (ICA), without removing neural signal.
+
+---
+
+## 🔍 Why Use ICA-AROMA?
+
+Traditional motion correction methods (e.g., realignment + motion regressors) don’t always fully capture complex motion-related artifacts, especially:
+
+- Spin-history effects
+- Micromovements
+- Structured noise not fully captured by rigid-body motion parameters
+
+ICA-AROMA improves upon this by:
+
+- Automatically detecting noise components associated with motion
+- Removing them while preserving true neural signal
+
+---
+
+## ⚙️ How It Works
+
+ICA-AROMA combines ICA decomposition with machine-learning–based classification to clean the data:
+
+1. 🎲 Run ICA decomposition (e.g., via FSL MELODIC)  
+   - fMRI time series is decomposed into a set of spatial components, each with its own time course.
+
+2. 🧠 Feature extraction  
+   For each component, AROMA computes several features:
+   - High-frequency content of the time course
+   - Edge fraction (how much of the component is in the brain edges)
+   - CSF fraction (how much of it lies in the cerebrospinal fluid)
+   - Correlation with realignment (motion) parameters
+
+3. 🤖 Component classification  
+   A predefined classifier labels each component as "signal" or "motion-related noise" based on the above features.
+
+4. 🧹 Component removal  
+   Only the noise components are removed from the fMRI time series by regression.
+
+---
+
+## 📤 Output
+
+A cleaned version of the fMRI data in which:
+
+- Motion-related ICA components have been regressed out
+- Neural signal is preserved more accurately than with global signal regression or aggressive scrubbing
+- The data is ready for further analysis (e.g., resting-state connectivity)
+
+---
+
+## ⚠️ Considerations
+
+- ICA-AROMA assumes that ICA components are spatially independent and additive.
+- Works best when preprocessing is done in standard space and includes spatial smoothing before ICA.
+- Not all denoising strategies are equally appropriate for every analysis — AROMA focuses on motion-related noise only.
+- IMPORTANT: Do not use the AROMA image for CSF or ventricular edge motion analyses, as this regresses out the inflow effect of CSF or the partial volume activity
 
 There are also other steps, such as volume censoring or physiological noise regression. 
 

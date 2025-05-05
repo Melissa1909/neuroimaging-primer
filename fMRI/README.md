@@ -53,6 +53,41 @@ CSF is mostly water (~99%), with very low cellular content and no hemoglobin. So
 - If you then place a ROI directly on the edge of lateral ventricles, you'll encounter what's called a partial volume effect, meaning that the ratio of CSF and parenchyma in the respective voxel will decide on the signal intensity of the observed voxel. Our group is particularly in the fMRI-based volume-sensitive measurement of ventricular motion, which you can read up [here](https://doi.org/10.1371/journal.pbio.3003138) in detail.
 
 ## 🛠️ Preprocessing steps
+
+Now that you've read all this theory about fMRI, let's start working on them, shall we?
+- Before you look at functional connectivity analyses or at CSF movement in fMRI, you should **preprocess** your images, as the fMRI image that you will get out of the scanner isn't of any use yet. 
+
+Why is that?
+- Especially in resting-state fMRI you do not have an expected model of brain activity as you would have in a typical task-based fMRI.
+- As most resting-state fMRI analyses are based on correlating different voxel timeseries with each other, any structural artefact in the data can ruin your observed outcome. 
+- In fMRI, movement, cardiac and breathing cycles but also scanner artifacts are typical sources of noise and especially in group comparisons you want to be sure to remove as much noise as possible, so that the observed effect is actually due to a group difference in for example functional connectivity and not due to a difference in head movement.
+
+That's why in resting-state, but also in task-based fMRI, you will send your data through **several different steps of preprocessing**.
+- [Here](https://www.youtube.com/watch?v=xLWES956JJE) is a good video that sums up what Preprocessing is generally about
+- There is plenty of software to account for the required preprocessing steps, this includes [FEAT](https://fsl.fmrib.ox.ac.uk/fsl/docs/#/task_fmri/feat/index) from FSL, [AFNI](https://afni.nimh.nih.gov/pub/dist/doc/htmldoc/starting/intro.html) or [SPM](https://www.fil.ion.ucl.ac.uk/spm/software/).
+- We mainly use FSL software and [here](https://www.youtube.com/watch?v=Bm3kUPP-tIc&t=921s) is a good video from the developers that explains the preprocessing steps discussed further below. They also developed a very useful image viewer called [FSLeyes](https://open.win.ox.ac.uk/pages/fsl/fsleyes/fsleyes/userdoc/overview.html), which we mainly use to look at images or create some example figures using real brains.
+
+Overview of different preprocessing steps
+**Conventional steps**
+1. Motion correction
+- xxx
+2. Slice timing
+- xxx
+3. Temporal filtering
+- xxx
+4. Registration
+- xxx
+5. Spatial smoothing
+- xxx
+
+**Extra noise reduction steps (!)**
+1. ICA-based clean-up
+- This is a semi-automatic noise labelling method
+
+
+
+There are also other steps, such as volume censoring or physiological noise regression. 
+
 ## 🤷‍♀️ Problems in fMRI
 
 

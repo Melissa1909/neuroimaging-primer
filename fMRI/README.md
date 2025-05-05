@@ -28,6 +28,30 @@ The **hemodynamic response function (HRF)** describes the BOLD signal with respe
 ## 🫀 Why do vessels dilate? - the neurovascular unit
 ## 📐 Outcome measures of fMRI
 ## 🧘‍♀️ Task vs. resting-state fMRI
+## 💧 fMRI signal from non-neural sources - CSF and parenchymal borders
+Functional MRI (especially **BOLD fMRI**) relies on detecting changes in the magnetic properties of deoxygenated hemoglobin — specifically the T2* (transverse relaxation) signal from hydrogen nuclei in water. In gray matter, these BOLD signal changes are linked to neural activity via neurovascular coupling.
+
+However, structures other than gray matter are visible in an fMRI image. In our case, we are interested in the behaviour of Cerebrospinal Fluid (CSF) and the motion of the brain's ventricular system. 
+
+CSF is mostly water (~99%), with very low cellular content and no hemoglobin. So, CSF does not produce a BOLD signal in the traditional neurovascular sense. However, CSF does have an fMRI signal that can vary, and here's where it comes from:
+
+✅ Physical sources of CSF fMRI signal:
+
+1. Bulk motion of CSF (due to cardiac and respiratory pulsations)
+- These motions cause phase shifts and signal fluctuations, especially near the ventricles and cisterns.
+- These fluctuations can be periodic and strong, contaminating surrounding BOLD signals.
+
+2. Flow-related effects
+- Flow of CSF modulates spin dephasing, causing T2* signal fluctuations, especially in gradient-echo EPI.
+- Especially when you place your region of interest (ROI) directly on the edge of the imaging volume, for example by looking at the fourth ventricle, fresh CSF will enter the brain periodically in response to small changes in cerebral blood volume (CBV), causing an inflow effect and thus visible up- and downward movement of CSF.
+- If you want to know why changes in CBV cause antiproportional movement of CSF (so-called gGM-CSF-coupling), you can read about the Monro-Kellie-Doctrine [here]()
+- The coupling between gray matter and CSF has been explored in various studies, including:
+- It is of particular interest in the CSF-community, as this value has been linked to numerous neurodegenerative diseases such as Alzheimers.
+
+3. Partial volume effects
+- Some voxels labeled as “CSF” contain small amounts of nearby parenchyma or blood vessels.
+- If you then place a ROI directly on the edge of lateral ventricles, you'll encounter what's called a partial volume effect, meaning that the ratio of CSF and parenchyma in the respective voxel will decide on the signal intensity of the observed voxel. Our group is particularly in the fMRI-based volume-sensitive measurement of ventricular motion, which you can read up [here](https://doi.org/10.1371/journal.pbio.3003138) in detail.
+
 ## 🛠️ Preprocessing steps
 ## 🤷‍♀️ Problems in fMRI
 

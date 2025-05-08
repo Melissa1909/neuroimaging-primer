@@ -62,6 +62,8 @@ As Freesurfer’s reconstruction is good but not perfect, we want to check some 
 - [QAtools](https://surfer.nmr.mgh.harvard.edu/fswiki/QATools)
 - Find some helpful guidelines to assess image quality provided by ENIGMA [here](https://enigma.ini.usc.edu/protocols/imaging-protocols/). 
 
+FreeSurfer has a mailing list that is really helpful if you have questions or problems. You can check out previous Q&As and/or subscribe to the mailing list and ask your own questions [here](https://www.mail-archive.com/freesurfer@nmr.mgh.harvard.edu/).
+
 
 *Specific note for TUM-NIC office:* the default version of FreeSurfer in our office is 5.3.0. However, this is really outdated. You can change the version by typing the following in the terminal:
 

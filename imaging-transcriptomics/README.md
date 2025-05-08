@@ -5,10 +5,12 @@ By now, the [Allen Human Brain Atlas](https://human.brain-map.org/) is the only 
 
 
 Find some reviews/articles introducing the field in more detail:
-- [A practical guide to linking brain-wide gene expression and neuroimaging data](https://doi.org/10.1016/j.neuroimage.2019.01.011) by Arnatkeviciute et al. 2019 - recommendations how to link gene expression data and ex vivo MRI from the AHBA back together
+- [A practical guide to linking brain-wide gene expression and neuroimaging data](https://doi.org/10.1016/j.neuroimage.2019.01.011) by Arnatkeviciute et al. 2019 
+- [Imaging transcriptomics of brain disorders](https://doi.org/10.1016/j.bpsgos.2021.10.002) by Arnatkeviciute et al. 2022 - review on studies using imaging transcriptomics for deciphering molecular mechanisms of brain disorders
+
+- recommendations how to link gene expression data and ex vivo MRI from the AHBA back together
 - [Standardizing workflows in imaging transcriptomics with the abagen toolbox](https://doi.org/10.7554/eLife.72129) by Markello et al. 2021 - introduced a Python toolbox to follow all the recommendations from above quite easily
 - [Toward best practices for imaging transcriptomics of the human brain](https://doi.org/10.1016/j.biopsych.2022.10.016) by Arnatkeviciute et al. 2023 - AMAZING step-for-step guide of how to do imaging transcriptomics yourself
-- [Imaging transcriptomics of brain disorders](https://doi.org/10.1016/j.bpsgos.2021.10.002) by Arnatkeviciute et al. 2022 - review on studies using imaging transcriptomics for deciphering molecular mechanisms of brain disorders
 - [Comparing spatial null models for brain maps](https://doi.org/10.1016/j.neuroimage.2021.118052) by Markello and Misic 2021 - review on spatial null models for correlating two brain maps (e.g., gene expression and imaging-derived phenotype maps)
 - [neuromaps: structural and functional interpretation of brain maps](doi.org/10.1038/s41592-022-01625-w) by Markello 2022 - a Python toolbox for spatial null models and other spatial analyses of brain maps
 
@@ -21,4 +23,10 @@ Since interpretation of the individual gene-level is demanding, imaging transcri
 - many more!
 	
 	
+## Abagen and neuromaps
+Check out these amazing Python packages by Ross Markello and collaborators - these are my favorite tools to work with the AHBA!
+- Abagen allows you to download the AHBA, preprocess and parcellate gene expression data according to the guidelines above, extrapolate the sampled gene expression data to the whole brain, and visualize the results.
+- Neuromaps allows you to access a bunch of other brain maps that may be useful for the biological interpretation of your results (such as cortical myelination, functional connectivity gradients, neurotransmitter receptor density, etc.). It also allows you to run spatial null models to test the significance of the spatial overlap between two brain maps.
+
+HIGHLY RECOMMENDED to check out the documentation, tutorials, and API of both packages! 
 

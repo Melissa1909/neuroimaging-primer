@@ -101,6 +101,7 @@ Big data is becoming more and more important for neuroimaging research. Since a 
 There are several algorithms and approaches at hand, and the problem is not yet entirely solved. [NeuroCombat](https://doi.org/10.1016/j.neuroimage.2017.11.024) provides a great framework to relatively easily correct for the scanner effect while retaining biological variance.
 - The python-based software is provided on [Github](https://github.com/Jfortin1/neuroCombat). 
 - However, mind some limitations of ComBat: as nicely explained [here](https://www.youtube.com/watch?v=Ctm20mtbLdU&ab_channel=MosiKia), ComBat may remove variance related to biological effects. Therefore, more recent adaptations of NeuroCombat exist, which however are not yet as frequently applied.
+- A comprehensive overview of the different harmonization methods, their statistical background, and pros and cons is provided in [this review by Johanna Bayer](https://doi.org/10.3389/fneur.2022.923988). The review focuses on techniques based on linear mixed effects models, ComBat-based models, and machine learning models (like hijacking normative models to harmonize data or using GANs).
 
 
 ## 🧐 Statistical analysis - interpret your data meaningfully

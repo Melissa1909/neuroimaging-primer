@@ -148,3 +148,4 @@ This will help science to get closer to the truth instead of just producing resu
 
 ## 🤿 Dive deeper into more advanced topics...
 Congratulations! You already learned a lot about neuroimaging and how to analyze MRI data! If you want to dive deeper into some specific topics, check out the folders above! You will find more information about neurodevelopmental disorders, functional MRI, specific modeling approaches, and how to investigate molecular underpinnings of brain aberrations visualized with MRI. 
+If you are interested in the hot topics currently discussed in the field, check out the main conferences like [OHBM](https://www.youtube.com/@OHBM), which often share previous meetings on their YouTube channels. This is an amazing resource to get a sense of the ongoing research and to get an introduction to a topic or method you plan to work with. 

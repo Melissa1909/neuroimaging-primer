@@ -2,7 +2,8 @@
 
 Normative modeling is about grasping individual brain changes instead of summarizing clinical groups into one homogenous "case" group and compare them to "controls". In psychiatry, disorder classifications are solely based on subjective diagnoses and can therefore be overlapping. Furthermore, disorders like schizophrenia are very heterogenous in their symptoms, disease course, but also regarding underlying phenomena like genetics or environmental influence factors. Normative modeling perceives "cases" not as a unique, homogenous group, but acknowledges heterogeneity between individuals, both among cases and controls, by modeling not only the mean but also the variance between subjects. 
 
-Two wonderful reviews by Andre Marquand summarizing these ideas:
+Three wonderful reviews by Andre Marquand and Ashlea Segal summarizing these ideas:
+- A really comprehensive review elaborating more on the assumptions of case-control-studies and why they are so problematic for psychiatric disorders by [Ashlea Segal (2025)](https://doi.org/10.1016/j.tics.2024.09.010)
 - [Understanding heterogeneity in clinical cohorts using normative models: beyond case-control studies](https://doi.org/10.1016/j.biopsych.2015.12.023)
 - [Conceptualizing mental disorders as deviations from normative functioning](https://doi.org/10.1038/s41380-019-0441-1)
 

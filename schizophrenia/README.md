@@ -28,14 +28,8 @@ Another important concept is the neurodevelopmental hypothesis of schizophrenia,
 
 
 ## Further reading
-### 🧬 Genetics of schizophrenia
+### 🧬 Genetics and evolution of schizophrenia
 With an estimated heritability of 80%, understanding the genetic background of the disorder is important for deciphering biological mechanisms. But genomic findings so far explain only 40% of heritability, demonstrating the high complexity of the disorder; as [Owen et al.](https://doi.org/10.1038/s41380-023-02293-8) put it "schizophrenia and other psychiatric, cognitive and behavioural traits are amongst the most polygenic of all human traits", [citing others](https://doi.org/10.1016/j.ajhg.2019.07.003). 
 Schizophrenia is highly polygenic, i.e., many genes and loci with a small effect have been identified. Furthermore, genetic findings have revealed a close relationship with other conditions, particularly bipolar disorder and childhood-onset neurodevelopmental disorders.
 - [Review: Genomic findings in schizophrenia and their implications](https://doi.org/10.1038/s41380-023-02293-8)
-
-
-
-
-
-
-
+- [Review: why schizophrenia exists from an evolutionary perspective](doi:10.1093/brain/awz330) and an accessible [scientific commentary](10.1093/brain/awz353) about it

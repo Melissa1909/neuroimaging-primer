@@ -1,5 +1,7 @@
 # neuroimaging-datasets
 
+An awesome collection of neuroimaging datasets: https://atlaslongitudinaldatasets.ac.uk/explore
+
 Large, healthy control datasets:
 - [HCP](https://www.humanconnectome.org/): 1200 healthy adults, age 22-35
 - [HCP Aging](https://www.humanconnectome.org/study/hcp-lifespan-aging): age 36-100+

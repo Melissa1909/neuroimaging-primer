@@ -6,6 +6,7 @@ Three wonderful reviews by Andre Marquand and Ashlea Segal summarizing these ide
 - A really comprehensive review elaborating more on the assumptions of case-control-studies and why they are so problematic for psychiatric disorders by [Ashlea Segal (2025)](https://doi.org/10.1016/j.tics.2024.09.010)
 - [Understanding heterogeneity in clinical cohorts using normative models: beyond case-control studies](https://doi.org/10.1016/j.biopsych.2015.12.023)
 - [Conceptualizing mental disorders as deviations from normative functioning](https://doi.org/10.1038/s41380-019-0441-1)
+- Another recent and truly informative review listing all normative modeling studies from 2019 - 2024 and especially focusing on the current gaps of normative modeling applications by [Charlotte Fraza (2025)](https://doi.org/10.1016/j.neubiorev.2025.106284). Crucial to read when you want to work with normative modeling in my opinion!!
 
 
 # 📈 Existing pre-trained lifespan models 
@@ -23,6 +24,7 @@ If you want to address a structure where no large-scale, population-based normat
 - [Paper by Rutherford et al.](https://doi.org/10.1101%2F2021.08.08.455583) that gives a step-by-step guide how to use it.
 - [Hands-on tutorial](https://github.com/CharFraza/CPC_ML_tutorial) to try it out yourself
 - [Readthedocs](https://pcntoolkit.readthedocs.io/en/latest/) with all functions explained
+
 
 There are also further frameworks and algorithms, which you can explore beyond the PCNtoolkit.
 

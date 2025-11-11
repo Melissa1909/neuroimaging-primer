@@ -1,4 +1,4 @@
-# programming ♥️
+# Programming ♥️
 
 ## 🐍 Programming with python
 This text is also in the main README, but also fits here (and is really recommended to be read 😉)
@@ -29,3 +29,7 @@ To avoid such conflicts, you can pack your software in a so called `docker conta
 Here is a good tutorial to learn the basics quickly:
 - [Docker in 1 hour](https://www.youtube.com/watch?v=pTFZFxd4hOI&ab_channel=ProgrammingwithMosh)
 - [Docker for beginners in the TUM-NIC Wiki](https://mri.mgruber.eu/projects/tumnic-intern/wiki/Docker_for_beginners), only available for members of our office
+
+
+## Analyzing large neuroimaging datasets
+As I already mentioned, neuroscience is more and more moving towards being a data science. The recently published book ["Introduction to Methods for Analyzing Large Neuroimaging Datasets"](https://link.springer.com/protocol/10.1007/978-1-0716-4260-3_1) is completely free of charge and gives a solid introduction into tools useful for analyzing big data in neuroimaging (I also touch upon some of them in other parts of this repo, e.g., BIDS for data organization, Git for version control, PCNtoolkit for normative modeling). 

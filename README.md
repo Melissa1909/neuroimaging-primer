@@ -2,10 +2,14 @@
 
 Some important sources to get into the basics of neuroimaging research. The list is incomplete and follows my personal preferences and experiences. Feel free to contribute and open a pull request! 
 
+The whole repository is driven by my conviction that - as [Hansen & Misic pose it](https://doi.org/10.1016/j.tins.2025.06.003) - "neuroscience is increasingly becoming a data science". Therefore, I think it will become inevitable in future neuroscience research to learn how to handle big datasets and how to code. So why not start now? 🌈
+
+
 ## 📸 MRI - imaging the brain 
 Studying the brain has undergone different periods, tightly linked to the available tools to look at and study it. Magnetic resonance imaging (MRI) is a common tool to image brain structure and function. It is a non-invasive medical imaging technique that uses a strong magnetic field and radio waves to generate a detailed representation of the brain. Get some more information of how MRI works below:
 - [What is MRI?](https://www.youtube.com/watch?v=LyCqYq5n67M&ab_channel=BettinaBae%C3%9Fler)
 - [MRI made easy]( https://rads.web.unc.edu/wp-content/uploads/sites/12234/2018/05/Phy-MRI-Made-Easy.pdf): a good overview of the technique, it takes some time to read, but is definitely worth the time!
+- [MRI questions](https://mriquestions.com/index.html): everything you ever wanted to know about MRI + a quiz to test your knowledge.
 
 
 ## 🖥️ Bash - a neuroimaging researcher's language
@@ -57,6 +61,8 @@ By preprocessing a T1-weighted MR image, we want to edit the image (e.g., intens
 - A very nice [tutorial](https://www.youtube.com/watch?v=6wxJ1up-E7E&list=PLIQIswOrUH6_DWy5mJlSfj6AWY0y9iUce&ab_channel=AndrewJahn) how to use FreeSurfer to process T1w images, again by Andrew Jahn
 - A detailed explanation of all recon-all steps and output files is explained [here](https://surfer.nmr.mgh.harvard.edu/fswiki/ReconAllDevTable)
 - How to navigate Freeview, a tool to visualize FreeSurfer output, is explained in [this tutorial](https://youtu.be/Mv-ECowxq2o)
+- A quick overview how FreeSurfer (i.e., based on surface- and volume-based analysis) is different from other software like SPM or FSL (based on volume-based analysis only) is given [here](https://www.yumpu.com/en/document/view/8297379/an-absolute-beginners-guide-to-surface-and-voxel-based-ismrm)
+- (optional): A real deep dive into [brain morphometry](https://link.springer.com/book/10.1007/978-1-4939-7647-8)
 
 As Freesurfer’s reconstruction is good but not perfect, we want to check some of the outputs visually. As looking at all images is tedious, FS has developed some handy tools that create a screenshot of the most important segmentations.
 - [QAtools](https://surfer.nmr.mgh.harvard.edu/fswiki/QATools)
@@ -114,7 +120,7 @@ There are plenty of good resources for statistical analyses and you will definit
 - the ["Statistics 101" channel](https://www.youtube.com/watch?v=0Vj2V2qRU10&list=PLIeGtxpvyG-KA-BLkL391X__r0kU4_hm5&ab_channel=BrandonFoltz), especially the playlists on ANOVA, linear regression, and how the two collapse into the general linear model (GLM)
 
 ### 🐍 Data analysis with Python, R, or Matlab
-There is some statistical software to perform neuroimaging analyses such as [SPSS Statistics](https://www.ibm.com/products/spss-statistics) that is really helpful. However, a license is required and workflow automation is not straightforward. Since big data becomes more important in neuroimaging and you will need Python for some imaging software anyways, I **really** recommend to learn some programming with Python. It allows you to handle big datasets (e.g., with pandas), to statistically analyze data (e.g., using scipy or sklearn), to nicely visualize your results (with matplotlib and seaborn), and even to directly work with neuroimaging data (e.g., nibabel). There are plenty of open source courses to learn it and your learning curve will be steep at the beginning. You will benefit from the skills early on and see some results! 
+There is some statistical software to perform neuroimaging analyses such as [SPSS Statistics](https://www.ibm.com/products/spss-statistics) that is really helpful. However, a license is required and workflow automation is not straightforward. Since big data becomes more important in neuroimaging and you will need Python for some imaging software anyways, I **really** recommend to learn some programming with Python. It allows you to handle big datasets (e.g., with the Python module pandas), to statistically analyze data (e.g., using scipy or sklearn), to nicely visualize your results (with matplotlib and seaborn), and even to directly work with neuroimaging data (e.g., nibabel, nilearn). There are plenty of open source courses to learn it and your learning curve will be steep at the beginning. You will benefit from the skills early on and see some results! 
 - [Basic Python Courses on edx](https://www.edx.org/certificates/professional-certificate/the-georgia-institute-of-technology-introduction-to-python-programming), the course material is free, the fees are solely for the certificate. 
 - [Python basics for data science](https://learning.edx.org/course/course-v1:IBM+PY0101EN+3T2020/home)
 - [Analyzing data with Python](https://learning.edx.org/course/course-v1:IBM+DA0101EN+3T2020/home)
@@ -122,7 +128,7 @@ There is some statistical software to perform neuroimaging analyses such as [SPS
 - [Neuroimaging and data science](https://neuroimaging-data-science.org/root.html): interactive book with coding exercises targeted to neuroimaging
 - [different tutorials listed by LMU open science center](https://github.com/lmu-osc)
 
-Alternatively, Matlab and/or R are also powerful programming languages that are widely used in neuroimaging research. Knowing one programming knowledge allows you to more quickly and easily learn others - the concepts are mostly very similar. 
+Alternatively, Matlab and/or R are also powerful programming languages that are widely used in neuroimaging research. Being skilled in one programming knowledge allows you to more quickly and easily learn others - the concepts are mostly very similar. 
 
 If you want to know more about it, follow me to the [coding section](https://github.com/Melissa1909/neuroimaging-primer/tree/main/programming) of this tutorial! 🥰
 

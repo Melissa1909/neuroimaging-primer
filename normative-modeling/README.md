@@ -8,6 +8,8 @@ Three wonderful reviews by Andre Marquand and Ashlea Segal summarizing these ide
 - [Conceptualizing mental disorders as deviations from normative functioning](https://doi.org/10.1038/s41380-019-0441-1)
 - Another recent and truly informative review listing all normative modeling studies from 2019 - 2024 and especially focusing on the current gaps of normative modeling applications by [Charlotte Fraza (2025)](https://doi.org/10.1016/j.neubiorev.2025.106284). Crucial to read when you want to work with normative modeling in my opinion!!
 
+Recent work by [Maria di Biase](https://doi.org/10.1038/s41467-026-72604-4) sheds light on heterogeneity of brain phenotypes and biochemical profiles of 9 psychiatric and 30 non-psychiatric disorders and provides an [interactive online tool](https://maria-dibiase.shinyapps.io/biological-heterogeneity/) to explore and download illness-specific heterogeneity. Among psychiatric disorders, schizophrenia exhibits greatest variance, in the brain as well as in biochemical markers. Interestingly, contrary to expectations, psychiatric disorders did not show higher levels of heterogeneity compared to non-psychiatric disorders.
+
 
 # 📈 Existing pre-trained lifespan models 
 With big data becoming more and more important in neuroscience, in the past 2-3 years, there were several initiatives that collected huge amounts of data (> 40,000 subjects) to model normative growth trajectories of the brain. You can compare these to [growth charts of the human body](https://www.cdc.gov/growthcharts/clinical_charts.htm) applied in pediatrics to see whether a child's height and weight is developing as expected with respect to their age and sex. The idea is the same: model how the brain develops across the lifespan with respect to age and sex. The existing growth charts differ with respect to the underlying data, the normative model used to create the charts, and the resolution/brain atlas used. The most popular lifespan growth charts are listed below:
@@ -31,3 +33,9 @@ There are also further frameworks and algorithms, which you can explore beyond t
 
 # 📚 Further reading and listening
 - [OHBM 2022 Symposium](https://www.youtube.com/watch?v=imbknEvdJOo&ab_channel=OrganizationforHumanBrainMapping) led by Andre Marquand on normative modeling
+
+
+# 🥠 Further options to characterize heterogeneity in neuroimaging
+- [Stochastic cortical self-reconstruction](https://doi.org/10.1016/j.media.2025.103788)
+- [Variability ratio](https://doi.org/10.1176/appi.ajp.20230806): for each ROI, the unbiased estimate of the standard deviation of the case and the control group are compared (i.e., quotient)
+- Person-based similarity index, PBSI: indicates each person's similarity to all other members in the same group. This measure was used in multiple studies, for example in [Omlor 2025](https://doi.org/10.1176/appi.ajp.20230806), [Doucet 2019](https://doi.org/10.1093/cercor/bhy287), or [Antoniades 2021](https://doi.org/10.1093/schbul/sbab005). 
